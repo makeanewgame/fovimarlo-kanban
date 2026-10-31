@@ -18,6 +18,8 @@ export function permissionCategoryLabel(
       return t`Comments`;
     case "Members":
       return t`Members`;
+    case "Pages":
+      return t`Pages`;
     default:
       return label;
   }

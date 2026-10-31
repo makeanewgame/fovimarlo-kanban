@@ -154,6 +154,11 @@ export function EditMemberPermissionsModal() {
     "member:invite": t`Can invite members`,
     "member:edit": t`Can edit member roles and permissions`,
     "member:remove": t`Can remove members`,
+
+    "page:view": t`Can view pages`,
+    "page:create": t`Can create pages`,
+    "page:edit": t`Can edit pages`,
+    "page:delete": t`Can delete pages`,
   };
 
   return (

@@ -10,6 +10,10 @@ import { t } from "@lingui/core/macro";
 import Link from "@tiptap/extension-link";
 import Mention from "@tiptap/extension-mention";
 import Placeholder from "@tiptap/extension-placeholder";
+import Table from "@tiptap/extension-table";
+import TableCell from "@tiptap/extension-table-cell";
+import TableHeader from "@tiptap/extension-table-header";
+import TableRow from "@tiptap/extension-table-row";
 import Typography from "@tiptap/extension-typography";
 import {
   BubbleMenu,
@@ -39,7 +43,15 @@ import {
   HiOutlineListBullet,
   HiOutlineNumberedList,
   HiOutlineStrikethrough,
+  HiOutlineTableCells,
 } from "react-icons/hi2";
+import {
+  TbColumnInsertRight,
+  TbColumnRemove,
+  TbRowInsertBottom,
+  TbRowRemove,
+  TbTableOff,
+} from "react-icons/tb";
 import { twMerge } from "tailwind-merge";
 import tippy from "tippy.js";
 import { Markdown } from "tiptap-markdown";
@@ -387,7 +399,10 @@ export interface SlashNodeAttrs {
   label?: string | null;
 }
 
-const getCommandItems = (disableHeadings: boolean): SlashCommandItem[] => {
+const getCommandItems = (
+  disableHeadings: boolean,
+  enableTables: boolean,
+): SlashCommandItem[] => {
   const headingCommands: SlashCommandItem[] = disableHeadings
     ? []
     : [
@@ -433,6 +448,20 @@ const getCommandItems = (disableHeadings: boolean): SlashCommandItem[] => {
       icon: <HiOutlineCodeBracketSquare />,
       command: ({ editor }) => editor.chain().focus().toggleCodeBlock().run(),
     },
+    ...(enableTables
+      ? [
+          {
+            title: t`Table`,
+            icon: <HiOutlineTableCells />,
+            command: ({ editor }: { editor: TiptapEditor }) =>
+              editor
+                .chain()
+                .focus()
+                .insertTable({ rows: 3, cols: 3, withHeaderRow: true })
+                .run(),
+          },
+        ]
+      : []),
   ];
 };
 
@@ -446,6 +475,7 @@ export default function Editor({
   enableYouTubeEmbed = true,
   placeholder,
   disableHeadings = false,
+  variant = "compact",
 }: {
   content: string | null;
   onChange?: (value: string) => void;
@@ -456,7 +486,9 @@ export default function Editor({
   enableYouTubeEmbed?: boolean;
   placeholder?: string;
   disableHeadings?: boolean;
+  variant?: "compact" | "document";
 }) {
+  const isDocument = variant === "document";
   const containerRef = useRef<HTMLDivElement>(null);
 
   // useEditor is created once (empty deps below), so keep the latest callbacks
@@ -499,10 +531,13 @@ export default function Editor({
               t`Add description... (type '/' to open commands or '@' to mention)`),
         }),
         SlashCommands.configure({
-          commandItems: getCommandItems(disableHeadings),
+          commandItems: getCommandItems(disableHeadings, isDocument),
           suggestion: {
             items: ({ query }: { query: string }) =>
-              filterSlashCommandItems(getCommandItems(disableHeadings), query),
+              filterSlashCommandItems(
+                getCommandItems(disableHeadings, isDocument),
+                query,
+              ),
             startOfLine: true,
             char: "/",
           },
@@ -570,6 +605,14 @@ export default function Editor({
           superscriptThree: false,
         }),
         ...(enableYouTubeEmbed ? [YouTubeNode] : []),
+        ...(isDocument
+          ? [
+              Table.configure({ resizable: true }),
+              TableRow,
+              TableHeader,
+              TableCell,
+            ]
+          : []),
       ],
       content,
       onUpdate: ({ editor }) => onChangeRef.current?.(editor.getHTML()),
@@ -646,13 +689,109 @@ export default function Editor({
         .tiptap [data-youtube] {
           margin: 1rem 0;
         }
+        .tiptap .tableWrapper {
+          overflow-x: auto;
+        }
+        .tiptap td,
+        .tiptap th {
+          position: relative;
+          vertical-align: top;
+        }
+        .tiptap td p,
+        .tiptap th p {
+          margin: 0 !important;
+        }
+        .tiptap .selectedCell {
+          background-color: rgba(59, 130, 246, 0.15);
+        }
+        .tiptap .column-resize-handle {
+          position: absolute;
+          top: 0;
+          right: -2px;
+          bottom: 0;
+          width: 4px;
+          background-color: rgb(59, 130, 246);
+          pointer-events: none;
+        }
+        .tiptap.resize-cursor {
+          cursor: col-resize;
+        }
       `}</style>
       {!readOnly && editor && <EditorBubbleMenu editor={editor} />}
+      {!readOnly && editor && isDocument && <TableBubbleMenu editor={editor} />}
       <EditorContent
         editor={editor}
-        className="prose dark:prose-invert prose-sm max-w-none overflow-y-auto [&_blockquote]:!text-xs [&_h1]:!text-lg [&_h2]:!text-base [&_h3]:!text-sm [&_ol]:!text-xs [&_p.is-empty::before]:text-light-900 [&_p.is-empty::before]:dark:text-dark-800 [&_p]:!text-sm [&_p]:text-light-950 [&_p]:dark:text-dark-950 [&_ul]:!text-xs"
+        className={
+          isDocument
+            ? "prose max-w-none dark:prose-invert [&_.tiptap]:min-h-[50vh] [&_p.is-empty::before]:text-light-900 [&_p.is-empty::before]:dark:text-dark-800 [&_p]:text-[15px] [&_p]:text-light-1000 [&_p]:dark:text-dark-1000 [&_table]:my-3 [&_table]:w-full [&_table]:table-fixed [&_table]:border-collapse [&_td]:border [&_td]:border-light-400 [&_td]:!p-2.5 [&_td]:dark:border-dark-500 [&_th]:border [&_th]:border-light-400 [&_th]:bg-light-200 [&_th]:!p-2.5 [&_th]:text-left [&_th]:dark:border-dark-500 [&_th]:dark:bg-dark-200"
+            : "prose dark:prose-invert prose-sm max-w-none overflow-y-auto [&_blockquote]:!text-xs [&_h1]:!text-lg [&_h2]:!text-base [&_h3]:!text-sm [&_ol]:!text-xs [&_p.is-empty::before]:text-light-900 [&_p.is-empty::before]:dark:text-dark-800 [&_p]:!text-sm [&_p]:text-light-950 [&_p]:dark:text-dark-950 [&_ul]:!text-xs"
+        }
       />
     </div>
+  );
+}
+
+function TableBubbleMenu({ editor }: { editor: TiptapEditor }) {
+  const tableMenuItems = [
+    {
+      title: t`Add row`,
+      icon: <TbRowInsertBottom />,
+      onClick: () => editor.chain().focus().addRowAfter().run(),
+    },
+    {
+      title: t`Add column`,
+      icon: <TbColumnInsertRight />,
+      onClick: () => editor.chain().focus().addColumnAfter().run(),
+    },
+    {
+      title: t`Delete row`,
+      icon: <TbRowRemove />,
+      onClick: () => editor.chain().focus().deleteRow().run(),
+    },
+    {
+      title: t`Delete column`,
+      icon: <TbColumnRemove />,
+      onClick: () => editor.chain().focus().deleteColumn().run(),
+    },
+    {
+      title: t`Delete table`,
+      icon: <TbTableOff />,
+      onClick: () => editor.chain().focus().deleteTable().run(),
+    },
+  ];
+
+  // Anchored to the table rather than the cursor so it never covers the cell
+  // being edited or the text formatting menu.
+  const getTableRect = () => {
+    const { node } = editor.view.domAtPos(editor.state.selection.from);
+    const element = node instanceof Element ? node : node.parentElement;
+    return (element?.closest("table") ?? editor.view.dom).getBoundingClientRect();
+  };
+
+  return (
+    <BubbleMenu
+      editor={editor}
+      pluginKey="tableMenu"
+      shouldShow={({ editor }) => editor.isActive("table")}
+      tippyOptions={{
+        getReferenceClientRect: getTableRect,
+        placement: "top-end",
+      }}
+    >
+      <div className="flex items-center gap-1 rounded-md border border-light-600 bg-light-50 p-1 dark:border-dark-600 dark:bg-dark-50">
+        {tableMenuItems.map((item) => (
+          <Button
+            key={item.title}
+            className="rounded p-1 text-light-900 hover:bg-light-200 focus:ring-2 focus:ring-light-600 dark:text-dark-900 dark:hover:bg-dark-300 dark:focus:ring-dark-600"
+            title={item.title}
+            aria-label={item.title}
+            onClick={item.onClick}
+          >
+            {item.icon}
+          </Button>
+        ))}
+      </div>
+    </BubbleMenu>
   );
 }
 

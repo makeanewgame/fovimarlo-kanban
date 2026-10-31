@@ -20,6 +20,9 @@ interface UsePermissionsResult {
   canEditBoard: boolean;
   canDeleteBoard: boolean;
   canArchiveBoard: boolean;
+  canCreatePage: boolean;
+  canEditPage: boolean;
+  canDeletePage: boolean;
   canViewComment: boolean;
   canCreateComment: boolean;
   canEditComment: boolean;
@@ -53,6 +56,9 @@ export function usePermissions(): UsePermissionsResult {
       canEditBoard: false,
       canDeleteBoard: false,
       canArchiveBoard: false,
+      canCreatePage: false,
+      canEditPage: false,
+      canDeletePage: false,
       canViewComment: false,
       canCreateComment: false,
       canEditComment: false,
@@ -98,6 +104,9 @@ export function usePermissions(): UsePermissionsResult {
     canEditBoard: hasPermission("board:edit"),
     canDeleteBoard: hasPermission("board:delete"),
     canArchiveBoard: hasPermission("board:edit"),
+    canCreatePage: hasPermission("page:create"),
+    canEditPage: hasPermission("page:edit"),
+    canDeletePage: hasPermission("page:delete"),
     canViewComment: hasPermission("comment:view"),
     canCreateComment: hasPermission("comment:create"),
     canEditComment: hasPermission("comment:edit"),

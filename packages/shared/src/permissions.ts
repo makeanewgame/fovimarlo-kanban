@@ -14,6 +14,7 @@ export const permissionResources = [
   "card",
   "comment",
   "member",
+  "page",
 ] as const;
 export type PermissionResource = (typeof permissionResources)[number];
 
@@ -42,6 +43,10 @@ export const allPermissions = [
   "member:invite",
   "member:edit",
   "member:remove",
+  "page:view",
+  "page:create",
+  "page:edit",
+  "page:delete",
 ] as const;
 
 export type Permission = (typeof allPermissions)[number];
@@ -74,6 +79,10 @@ export const defaultRolePermissions: Record<Role, readonly Permission[]> = {
     "comment:edit",
     "comment:delete",
     "member:view",
+    "page:view",
+    "page:create",
+    "page:edit",
+    "page:delete",
   ],
 
   guest: [
@@ -83,6 +92,7 @@ export const defaultRolePermissions: Record<Role, readonly Permission[]> = {
     "card:view",
     "comment:view",
     "member:view",
+    "page:view",
   ],
 } as const;
 
@@ -140,6 +150,15 @@ export const permissionCategories = {
       "member:invite",
       "member:edit",
       "member:remove",
+    ] as const,
+  },
+  page: {
+    label: "Pages",
+    permissions: [
+      "page:view",
+      "page:create",
+      "page:edit",
+      "page:delete",
     ] as const,
   },
 } as const;

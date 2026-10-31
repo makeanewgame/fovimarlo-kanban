@@ -23,23 +23,6 @@
     ],
     "translation": ", or see our"
   },
-  "J/hVSQ": {
-    "message": "{0}",
-    "placeholders": {
-      "0": [
-        "isTemplate ? \"Templates\" : \"Boards\""
-      ]
-    },
-    "comments": [],
-    "origin": [
-      [
-        "src/views/boards/index.tsx",
-        62
-      ]
-    ],
-    "translation": "{0}",
-    "obsolete": true
-  },
   "JArWcF": {
     "message": "{0} | {1}",
     "placeholders": {
@@ -177,18 +160,21 @@
     ],
     "translation": "{projectCount, plural, one {Import project (1)} other {Import projects ({projectCount})}}"
   },
-  "9lFfqv": {
-    "message": "/month",
-    "placeholders": {},
+  "5v6gsP": {
+    "translation": "{subPageCount, plural, one {Its # sub-page will be deleted too. This action can't be undone.} other {Its # sub-pages will be deleted too. This action can't be undone.}}",
+    "message": "{subPageCount, plural, one {Its # sub-page will be deleted too. This action can't be undone.} other {Its # sub-pages will be deleted too. This action can't be undone.}}",
+    "placeholders": {
+      "subPageCount": [
+        "subPageCount"
+      ]
+    },
     "comments": [],
     "origin": [
       [
-        "src/views/pricing/components/PricingTiers.tsx",
-        207
+        "src/views/pages/components/DeletePageConfirmation.tsx",
+        35
       ]
-    ],
-    "translation": "/month",
-    "obsolete": true
+    ]
   },
   "h/eDNV": {
     "message": "+ {overflowCount} more",
@@ -490,6 +476,22 @@
     ],
     "translation": "Add a card"
   },
+  "Wsa7xo": {
+    "translation": "Add a page inside {title}",
+    "message": "Add a page inside {title}",
+    "placeholders": {
+      "title": [
+        "title"
+      ]
+    },
+    "comments": [],
+    "origin": [
+      [
+        "src/views/pages/components/PageTree.tsx",
+        83
+      ]
+    ]
+  },
   "qtE5nt": {
     "message": "Add an item...",
     "placeholders": {},
@@ -546,6 +548,18 @@
     ],
     "translation": "Add checklist item"
   },
+  "AgvHni": {
+    "translation": "Add column",
+    "message": "Add column",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/components/Editor.tsx",
+        742
+      ]
+    ]
+  },
   "ngBZOd": {
     "message": "Add comment... (type '/' to open commands or '@' to mention)",
     "placeholders": {},
@@ -569,7 +583,7 @@
     "origin": [
       [
         "src/components/Editor.tsx",
-        499
+        531
       ]
     ],
     "translation": "Add description... (type '/' to open commands or '@' to mention)"
@@ -617,6 +631,30 @@
       ]
     ],
     "translation": "Add member"
+  },
+  "qZd/ph": {
+    "translation": "Add row",
+    "message": "Add row",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/components/Editor.tsx",
+        737
+      ]
+    ]
+  },
+  "i/JrHT": {
+    "translation": "Add sub-page",
+    "message": "Add sub-page",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/views/pages/components/PageTree.tsx",
+        84
+      ]
+    ]
   },
   "pBsoKL": {
     "message": "Add to favorites",
@@ -928,19 +966,6 @@
     ],
     "translation": "All member permission overrides have been reset to their role defaults."
   },
-  "ZAs2NN": {
-    "message": "All Pro features +",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/views/pricing/components/PricingTiers.tsx",
-        101
-      ]
-    ],
-    "translation": "All Pro features +",
-    "obsolete": true
-  },
   "UQbwrz": {
     "message": "All systems operational",
     "placeholders": {},
@@ -1217,6 +1242,22 @@
     ],
     "translation": "Are you sure want to remove {entityLabel}?"
   },
+  "R6gr8f": {
+    "translation": "Are you sure you want to delete \"{pageTitle}\"?",
+    "message": "Are you sure you want to delete \"{pageTitle}\"?",
+    "placeholders": {
+      "pageTitle": [
+        "pageTitle"
+      ]
+    },
+    "comments": [],
+    "origin": [
+      [
+        "src/views/pages/components/DeletePageConfirmation.tsx",
+        31
+      ]
+    ]
+  },
   "Ypy5pZ": {
     "message": "Are you sure you want to delete the webhook \"{webhookName}\"? This action cannot be undone.",
     "placeholders": {
@@ -1360,11 +1401,11 @@
     "origin": [
       [
         "src/views/board/components/NewCardForm.tsx",
-        661
+        657
       ],
       [
         "src/views/board/components/NewCardForm.tsx",
-        662
+        658
       ]
     ],
     "translation": "Attach files"
@@ -1481,45 +1522,6 @@
     ],
     "translation": "Best for large organizations with advanced needs"
   },
-  "UoSI+i": {
-    "message": "Best for small and growing teams that need collaboration",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/views/pricing/components/PricingTiers.tsx",
-        53
-      ]
-    ],
-    "translation": "Best for small and growing teams that need collaboration",
-    "obsolete": true
-  },
-  "zt/6cS": {
-    "message": "Best for small teams who want to collaborate and move faster together.",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/views/onboarding/select-plan/index.tsx",
-        91
-      ]
-    ],
-    "translation": "Best for small teams who want to collaborate and move faster together.",
-    "obsolete": true
-  },
-  "qaS+1/": {
-    "message": "Best for teams that want to scale without limits",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/views/pricing/components/PricingTiers.tsx",
-        76
-      ]
-    ],
-    "translation": "Best for teams that want to scale without limits",
-    "obsolete": true
-  },
   "jewQ8W": {
     "message": "Best for teams who want to collaborate and move faster together.",
     "placeholders": {},
@@ -1595,7 +1597,7 @@
     "origin": [
       [
         "src/components/Editor.tsx",
-        427
+        442
       ]
     ],
     "translation": "Blockquote"
@@ -1631,19 +1633,6 @@
       ]
     ],
     "translation": "Board"
-  },
-  "YhvWXb": {
-    "message": "Board analytics",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/views/settings/components/UpgradeToProConfirmation.tsx",
-        85
-      ]
-    ],
-    "translation": "Board analytics",
-    "obsolete": true
   },
   "i0ZMQl": {
     "message": "Board archived",
@@ -1801,19 +1790,6 @@
     ],
     "translation": "Board URL is required"
   },
-  "TmvrjU": {
-    "message": "Board URL must be at least 3 characters long",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/views/board/components/UpdateBoardSlugForm.tsx",
-        42
-      ]
-    ],
-    "translation": "Board URL must be at least 3 characters long",
-    "obsolete": true
-  },
   "qzdST2": {
     "message": "Board visibility",
     "placeholders": {},
@@ -1849,7 +1825,7 @@
     "origin": [
       [
         "src/components/SideNavigation.tsx",
-        101
+        102
       ],
       [
         "src/utils/permission-category-label.ts",
@@ -1925,7 +1901,7 @@
     "origin": [
       [
         "src/components/Editor.tsx",
-        417
+        432
       ]
     ],
     "translation": "Bullet List"
@@ -2006,6 +1982,22 @@
     ],
     "translation": "Can create lists"
   },
+  "olxvPy": {
+    "translation": "Can create pages",
+    "message": "Can create pages",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/views/members/components/EditMemberPermissionsModal.tsx",
+        159
+      ],
+      [
+        "src/views/settings/components/RolePermissions.tsx",
+        54
+      ]
+    ]
+  },
   "pXVFJy": {
     "message": "Can delete boards",
     "placeholders": {},
@@ -2069,6 +2061,22 @@
       ]
     ],
     "translation": "Can delete lists"
+  },
+  "XRKSEl": {
+    "translation": "Can delete pages",
+    "message": "Can delete pages",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/views/members/components/EditMemberPermissionsModal.tsx",
+        161
+      ],
+      [
+        "src/views/settings/components/RolePermissions.tsx",
+        56
+      ]
+    ]
   },
   "Cmudpi": {
     "message": "Can delete workspace",
@@ -2165,6 +2173,22 @@
       ]
     ],
     "translation": "Can edit member roles and permissions"
+  },
+  "jyZZov": {
+    "translation": "Can edit pages",
+    "message": "Can edit pages",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/views/members/components/EditMemberPermissionsModal.tsx",
+        160
+      ],
+      [
+        "src/views/settings/components/RolePermissions.tsx",
+        55
+      ]
+    ]
   },
   "iLbjv+": {
     "message": "Can edit workspace",
@@ -2310,6 +2334,22 @@
     ],
     "translation": "Can view members"
   },
+  "GctxHM": {
+    "translation": "Can view pages",
+    "message": "Can view pages",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/views/members/components/EditMemberPermissionsModal.tsx",
+        158
+      ],
+      [
+        "src/views/settings/components/RolePermissions.tsx",
+        53
+      ]
+    ]
+  },
   "SNfg0e": {
     "message": "Can view workspace",
     "placeholders": {},
@@ -2374,6 +2414,10 @@
       [
         "src/views/onboarding/select-plan/index.tsx",
         246
+      ],
+      [
+        "src/views/pages/components/DeletePageConfirmation.tsx",
+        45
       ],
       [
         "src/views/settings/components/Avatar.tsx",
@@ -2595,7 +2639,6 @@
     "translation": "changed the due date to <0>{formattedDate}</0>"
   },
   "Oc2rgi": {
-    "translation": "changed the priority to <0>{priorityLabel}</0>",
     "message": "changed the priority to <0>{priorityLabel}</0>",
     "placeholders": {
       "priorityLabel": [
@@ -2608,7 +2651,8 @@
         "src/views/card/components/ActivityList.tsx",
         348
       ]
-    ]
+    ],
+    "translation": "changed the priority to <0>{priorityLabel}</0>"
   },
   "pFGfsR": {
     "message": "Check out some of our favorite open source projects.",
@@ -2777,7 +2821,7 @@
     "origin": [
       [
         "src/components/Dashboard.tsx",
-        281
+        280
       ],
       [
         "src/views/card/index.tsx",
@@ -2785,7 +2829,7 @@
       ],
       [
         "src/views/members/components/EditMemberPermissionsModal.tsx",
-        175
+        180
       ],
       [
         "src/views/settings/components/NewApiKeyModal.tsx",
@@ -2801,7 +2845,7 @@
     "origin": [
       [
         "src/components/Editor.tsx",
-        432
+        447
       ]
     ],
     "translation": "Code Block"
@@ -2841,6 +2885,22 @@
       ]
     ],
     "translation": "Collaboration"
+  },
+  "M0p8YE": {
+    "translation": "Collapse {title}",
+    "message": "Collapse {title}",
+    "placeholders": {
+      "title": [
+        "title"
+      ]
+    },
+    "comments": [],
+    "origin": [
+      [
+        "src/views/pages/components/PageTree.tsx",
+        58
+      ]
+    ]
   },
   "AUYALh": {
     "message": "Coming soon",
@@ -2950,19 +3010,6 @@
     ],
     "translation": "completed checklist item <0>{0}</0>"
   },
-  "tOZp9v": {
-    "message": "Configurable user roles and permissions",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/views/pricing/components/PricingTiers.tsx",
-        82
-      ]
-    ],
-    "translation": "Configurable user roles and permissions",
-    "obsolete": true
-  },
   "t0dTPm": {
     "message": "Configure webhooks to receive notifications when cards are created, updated, moved, or deleted.",
     "placeholders": {},
@@ -2986,19 +3033,6 @@
       ]
     ],
     "translation": "Configure which actions are allowed for each workspace role. These permissions apply to all members with that role."
-  },
-  "86XI28": {
-    "message": "Confirm your email preferences:",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/pages/unsubscribe/index.tsx",
-        81
-      ]
-    ],
-    "translation": "Confirm your email preferences:",
-    "obsolete": true
   },
   "479pdJ": {
     "message": "Confirm your new password",
@@ -3212,19 +3246,6 @@
     ],
     "translation": "Convert to link"
   },
-  "5RkSzq": {
-    "message": "Copy board link",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/views/board/components/UpdateBoardSlugButton.tsx",
-        87
-      ]
-    ],
-    "translation": "Copy board link",
-    "obsolete": true
-  },
   "F0YmUY": {
     "message": "Copy card link",
     "placeholders": {},
@@ -3309,6 +3330,18 @@
     ],
     "translation": "Core features"
   },
+  "YVvRw1": {
+    "translation": "Couldn't save.",
+    "message": "Couldn't save.",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/views/pages/components/PageEditor.tsx",
+        36
+      ]
+    ]
+  },
   "b9XOHo": {
     "message": "Create {0}",
     "placeholders": {
@@ -3336,7 +3369,7 @@
       ],
       [
         "src/views/board/components/NewCardForm.tsx",
-        693
+        689
       ],
       [
         "src/views/board/components/NewListForm.tsx",
@@ -3364,7 +3397,7 @@
     "origin": [
       [
         "src/views/board/components/NewCardForm.tsx",
-        703
+        699
       ]
     ],
     "translation": "Create card"
@@ -3521,6 +3554,18 @@
     ],
     "translation": "Create workspace"
   },
+  "ssaQaB": {
+    "translation": "Create your first page to keep briefs, notes and checklists next to your boards.",
+    "message": "Create your first page to keep briefs, notes and checklists next to your boards.",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/views/pages/index.tsx",
+        147
+      ]
+    ]
+  },
   "d+F6q9": {
     "message": "Created",
     "placeholders": {},
@@ -3613,23 +3658,6 @@
     ],
     "translation": "Custom board templates"
   },
-  "A42Dqn": {
-    "message": "Custom branding",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/views/pricing/components/FeatureComparisonTable.tsx",
-        172
-      ],
-      [
-        "src/views/pricing/components/PricingTiers.tsx",
-        83
-      ]
-    ],
-    "translation": "Custom branding",
-    "obsolete": true
-  },
   "GAD3Dx": {
     "message": "Custom domain",
     "placeholders": {},
@@ -3666,19 +3694,6 @@
     ],
     "translation": "Custom SLA"
   },
-  "u2+JIh": {
-    "message": "Custom URLs require upgrading to a Pro plan",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/components/NewWorkspaceForm.tsx",
-        283
-      ]
-    ],
-    "translation": "Custom URLs require upgrading to a Pro plan",
-    "obsolete": true
-  },
   "7RpHg/": {
     "message": "Custom username",
     "placeholders": {},
@@ -3695,19 +3710,6 @@
     ],
     "translation": "Custom username"
   },
-  "ZDPJBc": {
-    "message": "Custom usernames require upgrading to a Pro plan",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/views/onboarding/workspace-details/index.tsx",
-        241
-      ]
-    ],
-    "translation": "Custom usernames require upgrading to a Pro plan",
-    "obsolete": true
-  },
   "5Y8Qur": {
     "message": "Custom usernames require upgrading to a Team plan",
     "placeholders": {},
@@ -3719,19 +3721,6 @@
       ]
     ],
     "translation": "Custom usernames require upgrading to a Team plan"
-  },
-  "j9IZZ0": {
-    "message": "Custom workspace URL",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/views/settings/components/UpgradeToProConfirmation.tsx",
-        78
-      ]
-    ],
-    "translation": "Custom workspace URL",
-    "obsolete": true
   },
   "OwneeH": {
     "message": "Custom workspace username",
@@ -3839,6 +3828,10 @@
         83
       ],
       [
+        "src/views/pages/components/DeletePageConfirmation.tsx",
+        51
+      ],
+      [
         "src/views/settings/components/DeleteWebhookConfirmation.tsx",
         82
       ],
@@ -3848,6 +3841,22 @@
       ]
     ],
     "translation": "Delete"
+  },
+  "ShjfSO": {
+    "translation": "Delete {title}",
+    "message": "Delete {title}",
+    "placeholders": {
+      "title": [
+        "title"
+      ]
+    },
+    "comments": [],
+    "origin": [
+      [
+        "src/views/pages/components/PageTree.tsx",
+        94
+      ]
+    ]
   },
   "ZDGm40": {
     "message": "Delete account",
@@ -3909,6 +3918,18 @@
     ],
     "translation": "Delete checklist"
   },
+  "GAohqx": {
+    "translation": "Delete column",
+    "message": "Delete column",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/components/Editor.tsx",
+        752
+      ]
+    ]
+  },
   "njJFtc": {
     "message": "Delete comment",
     "placeholders": {},
@@ -3932,6 +3953,42 @@
       ]
     ],
     "translation": "Delete list"
+  },
+  "O1M1zi": {
+    "translation": "Delete page",
+    "message": "Delete page",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/views/pages/components/PageTree.tsx",
+        95
+      ]
+    ]
+  },
+  "0cspe/": {
+    "translation": "Delete row",
+    "message": "Delete row",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/components/Editor.tsx",
+        747
+      ]
+    ]
+  },
+  "HSI88F": {
+    "translation": "Delete table",
+    "message": "Delete table",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/components/Editor.tsx",
+        757
+      ]
+    ]
   },
   "DFjdv0": {
     "message": "Delete template",
@@ -4156,19 +4213,6 @@
       ]
     ],
     "translation": "Do you offer a free plan?"
-  },
-  "jDRt4n": {
-    "message": "Do you want to unsubscribe?",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/pages/unsubscribe/index.tsx",
-        78
-      ]
-    ],
-    "translation": "Do you want to unsubscribe?",
-    "obsolete": true
   },
   "JyXBgS": {
     "message": "docs",
@@ -4469,7 +4513,7 @@
     "origin": [
       [
         "src/views/members/components/EditMemberPermissionsModal.tsx",
-        165
+        170
       ],
       [
         "src/views/members/index.tsx",
@@ -4950,32 +4994,6 @@
     ],
     "translation": "Error updating workspace URL"
   },
-  "YaZDYI": {
-    "message": "Error upgrading subscription",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/views/settings/components/UpgradeToProConfirmation.tsx",
-        43
-      ]
-    ],
-    "translation": "Error upgrading subscription",
-    "obsolete": true
-  },
-  "lsgnzd": {
-    "message": "Error upgrading to Pro",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/components/NewWorkspaceForm.tsx",
-        146
-      ]
-    ],
-    "translation": "Error upgrading to Pro",
-    "obsolete": true
-  },
   "CYWHT+": {
     "message": "Error uploading profile image",
     "placeholders": {},
@@ -5043,6 +5061,22 @@
       ]
     ],
     "translation": "Execution"
+  },
+  "92/Z2+": {
+    "translation": "Expand {title}",
+    "message": "Expand {title}",
+    "placeholders": {
+      "title": [
+        "title"
+      ]
+    },
+    "comments": [],
+    "origin": [
+      [
+        "src/views/pages/components/PageTree.tsx",
+        58
+      ]
+    ]
   },
   "GwNIE2": {
     "message": "Extended Roadmap",
@@ -5691,7 +5725,7 @@
     "origin": [
       [
         "src/components/SideNavigation.tsx",
-        109
+        110
       ],
       [
         "src/pages/404.tsx",
@@ -5719,10 +5753,22 @@
     "origin": [
       [
         "src/components/SideNavigation.tsx",
-        133
+        146
       ]
     ],
     "translation": "Go to members"
+  },
+  "4fVLnQ": {
+    "translation": "Go to pages",
+    "message": "Go to pages",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/components/SideNavigation.tsx",
+        122
+      ]
+    ]
   },
   "1WuwiM": {
     "message": "Go to settings",
@@ -5731,7 +5777,7 @@
     "origin": [
       [
         "src/components/SideNavigation.tsx",
-        145
+        158
       ]
     ],
     "translation": "Go to settings"
@@ -5743,7 +5789,7 @@
     "origin": [
       [
         "src/components/SideNavigation.tsx",
-        121
+        134
       ]
     ],
     "translation": "Go to templates"
@@ -5811,7 +5857,7 @@
     "origin": [
       [
         "src/components/Editor.tsx",
-        395
+        410
       ]
     ],
     "translation": "Heading 1"
@@ -5823,7 +5869,7 @@
     "origin": [
       [
         "src/components/Editor.tsx",
-        401
+        416
       ]
     ],
     "translation": "Heading 2"
@@ -5835,13 +5881,12 @@
     "origin": [
       [
         "src/components/Editor.tsx",
-        407
+        422
       ]
     ],
     "translation": "Heading 3"
   },
   "yx/fMc": {
-    "translation": "High",
     "message": "High",
     "placeholders": {},
     "comments": [],
@@ -5850,7 +5895,8 @@
         "src/components/PriorityBadge.tsx",
         32
       ]
-    ]
+    ],
+    "translation": "High"
   },
   "CB/NpV": {
     "message": "High Priority",
@@ -6344,19 +6390,6 @@
     ],
     "translation": "Invite member"
   },
-  "M2zwdn": {
-    "message": "Inviting members requires a Team or Pro plan. You'll be redirected to upgrade your workspace.",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/views/members/components/InviteMemberForm.tsx",
-        329
-      ]
-    ],
-    "translation": "Inviting members requires a Team or Pro plan. You'll be redirected to upgrade your workspace.",
-    "obsolete": true
-  },
   "7tEnCk": {
     "message": "Inviting members requires a Team plan. You'll be redirected to upgrade your workspace.",
     "placeholders": {},
@@ -6368,19 +6401,6 @@
       ]
     ],
     "translation": "Inviting members requires a Team plan. You'll be redirected to upgrade your workspace."
-  },
-  "qPP4lD": {
-    "message": "Inviting members requires a Team Plan. You'll be redirected to upgrade your workspace.",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/views/members/components/InviteMemberForm.tsx",
-        336
-      ]
-    ],
-    "translation": "Inviting members requires a Team Plan. You'll be redirected to upgrade your workspace.",
-    "obsolete": true
   },
   "c9AJhn": {
     "message": "Join workspace",
@@ -6550,31 +6570,21 @@
     ],
     "translation": "Large"
   },
-  "8Is1ih": {
-    "message": "Launch offer",
-    "placeholders": {},
+  "QEU41f": {
+    "translation": "Last updated {0}",
+    "message": "Last updated {0}",
+    "placeholders": {
+      "0": [
+        "i18n.date(lastEdit.updatedAt, {\n            dateStyle: \"medium\",\n            timeStyle: \"short\",\n          })"
+      ]
+    },
     "comments": [],
     "origin": [
       [
-        "src/views/pricing/components/PricingTiers.tsx",
-        159
+        "src/views/pages/components/PageEditor.tsx",
+        137
       ]
-    ],
-    "translation": "Launch offer",
-    "obsolete": true
-  },
-  "EEHmPC": {
-    "message": "Launch offer: Get unlimited members with Pro",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/views/members/index.tsx",
-        276
-      ]
-    ],
-    "translation": "Launch offer: Get unlimited members with Pro",
-    "obsolete": true
+    ]
   },
   "sDuhfK": {
     "message": "Launch offer: unlimited seats for just $29/month with Pro",
@@ -6643,7 +6653,7 @@
     "origin": [
       [
         "src/components/Dashboard.tsx",
-        115
+        113
       ]
     ],
     "translation": "License activated"
@@ -6655,7 +6665,7 @@
     "origin": [
       [
         "src/components/Dashboard.tsx",
-        129
+        127
       ]
     ],
     "translation": "License activation failed"
@@ -6791,7 +6801,7 @@
     "origin": [
       [
         "src/views/members/components/EditMemberPermissionsModal.tsx",
-        183
+        188
       ]
     ],
     "translation": "Loading permissions..."
@@ -6857,7 +6867,6 @@
     "translation": "Loved by teams worldwide"
   },
   "nTWWCZ": {
-    "translation": "Low",
     "message": "Low",
     "placeholders": {},
     "comments": [],
@@ -6866,7 +6875,8 @@
         "src/components/PriorityBadge.tsx",
         34
       ]
-    ]
+    ],
+    "translation": "Low"
   },
   "O9jVbx": {
     "message": "Low Priority",
@@ -7055,7 +7065,7 @@
     "origin": [
       [
         "src/components/SideNavigation.tsx",
-        125
+        138
       ],
       [
         "src/utils/permission-category-label.ts",
@@ -7435,6 +7445,22 @@
     ],
     "translation": "New list"
   },
+  "fos4db": {
+    "translation": "New page",
+    "message": "New page",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/views/pages/index.tsx",
+        101
+      ],
+      [
+        "src/views/pages/index.tsx",
+        108
+      ]
+    ]
+  },
   "+MdEsf": {
     "message": "New password is required",
     "placeholders": {},
@@ -7662,7 +7688,7 @@
     "origin": [
       [
         "src/components/Dashboard.tsx",
-        126
+        124
       ]
     ],
     "translation": "No license key was provided. Please try activating again."
@@ -7690,6 +7716,18 @@
       ]
     ],
     "translation": "No lists have been created yet"
+  },
+  "LkvLQe": {
+    "translation": "No pages yet.",
+    "message": "No pages yet.",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/views/pages/index.tsx",
+        131
+      ]
+    ]
   },
   "i30J2U": {
     "message": "No projects found",
@@ -7726,7 +7764,7 @@
     "origin": [
       [
         "src/views/settings/components/RolePermissions.tsx",
-        120
+        125
       ]
     ],
     "translation": "No roles found for this workspace yet."
@@ -7882,7 +7920,7 @@
     "origin": [
       [
         "src/components/Editor.tsx",
-        422
+        437
       ]
     ],
     "translation": "Ordered List"
@@ -7963,6 +8001,58 @@
     ],
     "translation": "Page not found"
   },
+  "ZfAT4u": {
+    "translation": "Page title",
+    "message": "Page title",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/views/pages/components/PageEditor.tsx",
+        120
+      ]
+    ]
+  },
+  "wRR604": {
+    "translation": "Pages",
+    "message": "Pages",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/components/SideNavigation.tsx",
+        114
+      ],
+      [
+        "src/utils/permission-category-label.ts",
+        22
+      ],
+      [
+        "src/views/pages/components/PageEditor.tsx",
+        201
+      ],
+      [
+        "src/views/pages/index.tsx",
+        97
+      ]
+    ]
+  },
+  "ySJgqE": {
+    "translation": "Pages | {0}",
+    "message": "Pages | {0}",
+    "placeholders": {
+      "0": [
+        "workspace.name ?? t`Workspace`"
+      ]
+    },
+    "comments": [],
+    "origin": [
+      [
+        "src/views/pages/index.tsx",
+        87
+      ]
+    ]
+  },
   "Uworke": {
     "message": "Part-time",
     "placeholders": {},
@@ -7982,7 +8072,7 @@
     "origin": [
       [
         "src/components/Dashboard.tsx",
-        271
+        270
       ]
     ],
     "translation": "Password already set"
@@ -8154,7 +8244,7 @@
     "origin": [
       [
         "src/views/settings/components/RolePermissions.tsx",
-        129
+        134
       ]
     ],
     "translation": "Permission"
@@ -8537,6 +8627,10 @@
         167
       ],
       [
+        "src/views/pages/index.tsx",
+        53
+      ],
+      [
         "src/views/settings/components/Avatar.tsx",
         205
       ],
@@ -8684,7 +8778,6 @@
     "translation": "Pricing"
   },
   "1hKEom": {
-    "translation": "Priority",
     "message": "Priority",
     "placeholders": {},
     "comments": [],
@@ -8695,17 +8788,18 @@
       ],
       [
         "src/views/board/components/NewCardForm.tsx",
-        640
+        637
       ],
       [
         "src/views/card/components/PrioritySelector.tsx",
-        79
+        80
       ],
       [
         "src/views/card/index.tsx",
         160
       ]
-    ]
+    ],
+    "translation": "Priority"
   },
   "ESClHO": {
     "message": "Priority email support",
@@ -8750,27 +8844,6 @@
       ]
     ],
     "translation": "Private"
-  },
-  "3fPjUY": {
-    "message": "Pro",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/views/onboarding/select-plan/index.tsx",
-        96
-      ],
-      [
-        "src/views/pricing/components/FeatureComparisonTable.tsx",
-        333
-      ],
-      [
-        "src/views/pricing/components/PricingTiers.tsx",
-        70
-      ]
-    ],
-    "translation": "Pro",
-    "obsolete": true
   },
   "oyRjD/": {
     "message": "Pro Plan",
@@ -8908,6 +8981,18 @@
     ],
     "translation": "Rejected"
   },
+  "HpK/8d": {
+    "translation": "Reload",
+    "message": "Reload",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/views/pages/components/PageEditor.tsx",
+        109
+      ]
+    ]
+  },
   "qlAIQ1": {
     "message": "Remote",
     "placeholders": {},
@@ -8939,7 +9024,7 @@
     "origin": [
       [
         "src/views/board/components/NewCardForm.tsx",
-        680
+        676
       ]
     ],
     "translation": "Remove file"
@@ -9084,7 +9169,6 @@
     "translation": "removed the due date"
   },
   "IpPZIa": {
-    "translation": "removed the priority",
     "message": "removed the priority",
     "placeholders": {},
     "comments": [],
@@ -9093,7 +9177,8 @@
         "src/views/card/components/ActivityList.tsx",
         153
       ]
-    ]
+    ],
+    "translation": "removed the priority"
   },
   "NypLoL": {
     "message": "renamed a checklist",
@@ -9174,7 +9259,7 @@
     "origin": [
       [
         "src/views/members/components/EditMemberPermissionsModal.tsx",
-        248
+        253
       ]
     ],
     "translation": "Reset to role defaults"
@@ -9263,19 +9348,6 @@
     ],
     "translation": "Role updated"
   },
-  "RzxgOE": {
-    "message": "Roles & permissions",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/views/pricing/components/FeatureComparisonTable.tsx",
-        164
-      ]
-    ],
-    "translation": "Roles & permissions",
-    "obsolete": true
-  },
   "vAR/I8": {
     "message": "Run on your own infrastructure",
     "placeholders": {},
@@ -9355,6 +9427,30 @@
       ]
     ],
     "translation": "Save time with reusable board templates."
+  },
+  "idD8Ev": {
+    "translation": "Saved",
+    "message": "Saved",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/views/pages/components/PageEditor.tsx",
+        32
+      ]
+    ]
+  },
+  "XvjC4F": {
+    "translation": "Saving...",
+    "message": "Saving...",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/views/pages/components/PageEditor.tsx",
+        31
+      ]
+    ]
   },
   "cOh+MI": {
     "message": "Screening",
@@ -9491,6 +9587,18 @@
       ]
     ],
     "translation": "Select a list"
+  },
+  "UmhUBg": {
+    "translation": "Select a page to start reading.",
+    "message": "Select a page to start reading.",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/views/pages/index.tsx",
+        146
+      ]
+    ]
   },
   "NM2hyD": {
     "message": "Select a workspace",
@@ -9689,16 +9797,16 @@
     "translation": "Set Password"
   },
   "hNmOZ7": {
-    "translation": "Set priority",
     "message": "Set priority",
     "placeholders": {},
     "comments": [],
     "origin": [
       [
         "src/views/card/components/PrioritySelector.tsx",
-        89
+        90
       ]
-    ]
+    ],
+    "translation": "Set priority"
   },
   "Eit43O": {
     "message": "set the due date",
@@ -9713,7 +9821,6 @@
     "translation": "set the due date"
   },
   "kEWNWZ": {
-    "translation": "set the priority",
     "message": "set the priority",
     "placeholders": {},
     "comments": [],
@@ -9722,10 +9829,10 @@
         "src/views/card/components/ActivityList.tsx",
         151
       ]
-    ]
+    ],
+    "translation": "set the priority"
   },
   "wAk9bo": {
-    "translation": "set the priority to <0>{priorityLabel}</0>",
     "message": "set the priority to <0>{priorityLabel}</0>",
     "placeholders": {
       "priorityLabel": [
@@ -9738,7 +9845,8 @@
         "src/views/card/components/ActivityList.tsx",
         339
       ]
-    ]
+    ],
+    "translation": "set the priority to <0>{priorityLabel}</0>"
   },
   "JjEJSy": {
     "message": "Set up your workspace",
@@ -9763,7 +9871,7 @@
       ],
       [
         "src/components/SideNavigation.tsx",
-        137
+        150
       ]
     ],
     "translation": "Settings"
@@ -10120,6 +10228,18 @@
     ],
     "translation": "Some attachments failed"
   },
+  "z+46j+": {
+    "translation": "Someone else changed this page. Your latest edits aren't saved. Copy them if you need them, then reload.",
+    "message": "Someone else changed this page. Your latest edits aren't saved. Copy them if you need them, then reload.",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/views/pages/components/PageEditor.tsx",
+        106
+      ]
+    ]
+  },
   "J9+zIR": {
     "message": "Something went wrong during activation. Please try again.",
     "placeholders": {},
@@ -10139,7 +10259,7 @@
     "origin": [
       [
         "src/components/Dashboard.tsx",
-        132
+        130
       ]
     ],
     "translation": "Something went wrong during license activation."
@@ -10168,19 +10288,6 @@
     ],
     "translation": "Star on Github"
   },
-  "veIDCY": {
-    "message": "Start 14 day free trial",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/views/settings/components/UpgradeToProConfirmation.tsx",
-        113
-      ]
-    ],
-    "translation": "Start 14 day free trial",
-    "obsolete": true
-  },
   "4+JaWo": {
     "message": "Start free trial",
     "placeholders": {},
@@ -10188,15 +10295,15 @@
     "origin": [
       [
         "src/components/SideNavigation.tsx",
-        232
+        246
       ],
       [
         "src/components/SideNavigation.tsx",
-        233
+        247
       ],
       [
         "src/components/SideNavigation.tsx",
-        243
+        257
       ]
     ],
     "translation": "Start free trial"
@@ -10301,19 +10408,6 @@
     ],
     "translation": "Sunday"
   },
-  "uZg2+w": {
-    "message": "Supercharge your workspace for just $29/month. Here's what you'll get:",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/views/settings/components/UpgradeToProConfirmation.tsx",
-        59
-      ]
-    ],
-    "translation": "Supercharge your workspace for just $29/month. Here's what you'll get:",
-    "obsolete": true
-  },
   "XYLcNv": {
     "message": "Support",
     "placeholders": {},
@@ -10353,6 +10447,18 @@
       ]
     ],
     "translation": "System"
+  },
+  "4hJhzz": {
+    "translation": "Table",
+    "message": "Table",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/components/Editor.tsx",
+        454
+      ]
+    ]
   },
   "KM6m8p": {
     "message": "Team",
@@ -10477,7 +10583,7 @@
     "origin": [
       [
         "src/components/SideNavigation.tsx",
-        113
+        126
       ],
       [
         "src/views/boards/index.tsx",
@@ -10597,7 +10703,7 @@
     "origin": [
       [
         "src/components/Dashboard.tsx",
-        124
+        122
       ]
     ],
     "translation": "That license key could not be found. Please contact support."
@@ -10813,6 +10919,10 @@
       [
         "src/views/card/components/DeleteCommentConfirmation.tsx",
         69
+      ],
+      [
+        "src/views/pages/components/DeletePageConfirmation.tsx",
+        40
       ]
     ],
     "translation": "This action can't be undone."
@@ -10876,6 +10986,18 @@
       ]
     ],
     "translation": "This member's permissions have been reset to their role defaults."
+  },
+  "6T6uGy": {
+    "translation": "This page doesn't exist or was deleted.",
+    "message": "This page doesn't exist or was deleted.",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/views/pages/components/PageEditor.tsx",
+        211
+      ]
+    ]
   },
   "HQVm6e": {
     "message": "This URL has already been taken",
@@ -11149,6 +11271,18 @@
     ],
     "translation": "Trusted by fast-moving teams<0/>around the world"
   },
+  "KDw4GX": {
+    "translation": "Try again",
+    "message": "Try again",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/views/pages/components/PageEditor.tsx",
+        38
+      ]
+    ]
+  },
   "bZSICm": {
     "message": "Unable to add checklist item",
     "placeholders": {},
@@ -11268,6 +11402,18 @@
       ]
     ],
     "translation": "Unable to create list"
+  },
+  "FB/Nlf": {
+    "translation": "Unable to create page",
+    "message": "Unable to create page",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/views/pages/index.tsx",
+        52
+      ]
+    ]
   },
   "YcyP2z": {
     "message": "Unable to create template",
@@ -11662,7 +11808,6 @@
     "translation": "Unable to update permissions"
   },
   "uPW/GB": {
-    "translation": "Unable to update priority",
     "message": "Unable to update priority",
     "placeholders": {},
     "comments": [],
@@ -11671,7 +11816,8 @@
         "src/views/card/components/PrioritySelector.tsx",
         50
       ]
-    ]
+    ],
+    "translation": "Unable to update priority"
   },
   "TFv5tM": {
     "message": "Unable to update role",
@@ -11885,19 +12031,6 @@
     ],
     "translation": "Unlimited members"
   },
-  "8AwlaR": {
-    "message": "Unlimited members and a custom workspace username for teams ready to scale.",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/views/onboarding/select-plan/index.tsx",
-        99
-      ]
-    ],
-    "translation": "Unlimited members and a custom workspace username for teams ready to scale.",
-    "obsolete": true
-  },
   "i5yNAO": {
     "message": "Unlimited seats",
     "placeholders": {},
@@ -11910,35 +12043,29 @@
     ],
     "translation": "Unlimited seats"
   },
-  "Ws+3X+": {
-    "message": "Unlimited seats and advanced features for growing teams.",
+  "wja8aL": {
+    "translation": "Untitled",
+    "message": "Untitled",
     "placeholders": {},
     "comments": [],
     "origin": [
       [
-        "src/views/pricing/components/PricingTiers.tsx",
-        75
-      ]
-    ],
-    "translation": "Unlimited seats and advanced features for growing teams.",
-    "obsolete": true
-  },
-  "SMaFdc": {
-    "message": "Unsubscribe",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/pages/unsubscribe/index.tsx",
-        68
+        "src/views/pages/components/PageEditor.tsx",
+        101
       ],
       [
-        "src/pages/unsubscribe/index.tsx",
-        93
+        "src/views/pages/components/PageEditor.tsx",
+        119
+      ],
+      [
+        "src/views/pages/components/PageTree.tsx",
+        40
+      ],
+      [
+        "src/views/pages/index.tsx",
+        67
       ]
-    ],
-    "translation": "Unsubscribe",
-    "obsolete": true
+    ]
   },
   "EkH9pt": {
     "message": "Update",
@@ -12017,7 +12144,6 @@
     "translation": "updated the due date"
   },
   "ORNzDO": {
-    "translation": "updated the priority",
     "message": "updated the priority",
     "placeholders": {},
     "comments": [],
@@ -12026,7 +12152,8 @@
         "src/views/card/components/ActivityList.tsx",
         152
       ]
-    ]
+    ],
+    "translation": "updated the priority"
   },
   "V3MPSQ": {
     "message": "updated the title",
@@ -12075,32 +12202,6 @@
       ]
     ],
     "translation": "Upgrade"
-  },
-  "IelE1h": {
-    "message": "Upgrade to Pro",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/views/settings/components/UpgradeToProConfirmation.tsx",
-        55
-      ]
-    ],
-    "translation": "Upgrade to Pro",
-    "obsolete": true
-  },
-  "cWtfn1": {
-    "message": "Upgrade to Pro ($29/month)",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/views/onboarding/workspace-details/index.tsx",
-        265
-      ]
-    ],
-    "translation": "Upgrade to Pro ($29/month)",
-    "obsolete": true
   },
   "21QsyA": {
     "message": "Upgrade your plan",
@@ -12373,19 +12474,6 @@
       ]
     ],
     "translation": "We are using the <0>AGPL-3.0 license</0>."
-  },
-  "+EkBs0": {
-    "message": "We couldn't update your preferences. Please try again.",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/pages/unsubscribe/index.tsx",
-        63
-      ]
-    ],
-    "translation": "We couldn't update your preferences. Please try again.",
-    "obsolete": true
   },
   "7sdSkl": {
     "message": "We sent a link to {magicLinkRecipient}",
@@ -12665,6 +12753,14 @@
         279
       ],
       [
+        "src/views/pages/components/PageEditor.tsx",
+        101
+      ],
+      [
+        "src/views/pages/index.tsx",
+        87
+      ],
+      [
         "src/views/public/board/index.tsx",
         125
       ],
@@ -12674,19 +12770,6 @@
       ]
     ],
     "translation": "Workspace"
-  },
-  "LTGE7Y": {
-    "message": "Workspace created successfully. You can upgrade later in settings.",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/components/NewWorkspaceForm.tsx",
-        147
-      ]
-    ],
-    "translation": "Workspace created successfully. You can upgrade later in settings.",
-    "obsolete": true
   },
   "UlhdTP": {
     "message": "Workspace deleted",
@@ -12912,6 +12995,18 @@
     ],
     "translation": "workspace-url"
   },
+  "8ZDHwr": {
+    "translation": "Write something... (type '/' for commands or '@' to mention)",
+    "message": "Write something... (type '/' for commands or '@' to mention)",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/views/pages/components/PageEditor.tsx",
+        153
+      ]
+    ]
+  },
   "4kJRen": {
     "message": "Writing",
     "placeholders": {},
@@ -12975,19 +13070,6 @@
       ]
     ],
     "translation": "You can always change these later in settings."
-  },
-  "aelko+": {
-    "message": "You can get a custom workspace URL, like <0>kan.bn/kan</0>, by going into your <1>workspace settings</1> and purchasing a pro workspace subscription. All subscriptions help fund the development of the project!",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/views/home/components/Faqs.tsx",
-        67
-      ]
-    ],
-    "translation": "You can get a custom workspace URL, like <0>kan.bn/kan</0>, by going into your <1>workspace settings</1> and purchasing a pro workspace subscription. All subscriptions help fund the development of the project!",
-    "obsolete": true
   },
   "oRGf3Q": {
     "message": "You can get a custom workspace URL, like <0>kan.bn/kan</0>, by going into your <1>workspace settings</1> and upgrading to a Team workspace subscription. All subscriptions help fund the development of the project!",
@@ -13069,9 +13151,25 @@
       [
         "src/views/boards/index.tsx",
         90
+      ],
+      [
+        "src/views/pages/index.tsx",
+        101
       ]
     ],
     "translation": "You don't have permission"
+  },
+  "9fHIVY": {
+    "translation": "You don't have permission to view this page.",
+    "message": "You don't have permission to view this page.",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/views/pages/components/PageEditor.tsx",
+        210
+      ]
+    ]
   },
   "p/hk9N": {
     "message": "You have been logged in successfully.",
@@ -13096,32 +13194,6 @@
       ]
     ],
     "translation": "You have been signed up successfully."
-  },
-  "raHesj": {
-    "message": "You have been unsubscribed!",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/pages/unsubscribe/index.tsx",
-        98
-      ]
-    ],
-    "translation": "You have been unsubscribed!",
-    "obsolete": true
-  },
-  "R275Pz": {
-    "message": "You have unlimited seats with your Pro Plan. There is no additional charge for new members!",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/views/members/components/InviteMemberForm.tsx",
-        321
-      ]
-    ],
-    "translation": "You have unlimited seats with your Pro Plan. There is no additional charge for new members!",
-    "obsolete": true
   },
   "MdN5zD": {
     "message": "You need to be an admin to manage workspace permissions.",
@@ -13194,7 +13266,7 @@
     "origin": [
       [
         "src/components/Dashboard.tsx",
-        273
+        272
       ]
     ],
     "translation": "Your account already has a password. You can change it from your account settings."
@@ -13302,7 +13374,7 @@
     "origin": [
       [
         "src/components/Dashboard.tsx",
-        116
+        114
       ]
     ],
     "translation": "Your license has been activated successfully."
@@ -13314,7 +13386,7 @@
     "origin": [
       [
         "src/components/Dashboard.tsx",
-        125
+        123
       ]
     ],
     "translation": "Your license is not active. Please check your account."
@@ -13390,19 +13462,6 @@
       ]
     ],
     "translation": "Your Trello account is connected."
-  },
-  "25fAUC": {
-    "message": "Your unsubscribe link is missing a token. Please open the latest email and try again.",
-    "placeholders": {},
-    "comments": [],
-    "origin": [
-      [
-        "src/pages/unsubscribe/index.tsx",
-        33
-      ]
-    ],
-    "translation": "Your unsubscribe link is missing a token. Please open the latest email and try again.",
-    "obsolete": true
   },
   "GRAGsB": {
     "message": "Your workspace",
