@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { twMerge } from "tailwind-merge";
 
+import { getAvatarColour } from "~/utils/avatarColours";
 import { getInitialsFromName, inferInitialsFromEmail } from "~/utils/helpers";
 
 const sizeMap = {
@@ -8,6 +9,7 @@ const sizeMap = {
   sm: 24,
   md: 36,
   lg: 48,
+  xl: 64,
 } as const;
 
 const Avatar = ({
@@ -18,7 +20,7 @@ const Avatar = ({
   imageUrl,
   isLoading,
 }: {
-  size?: "xs" | "sm" | "md" | "lg";
+  size?: "xs" | "sm" | "md" | "lg" | "xl";
   name: string;
   email: string;
   imageUrl?: string;
@@ -28,6 +30,8 @@ const Avatar = ({
   const initials = name?.trim()
     ? getInitialsFromName(name)
     : inferInitialsFromEmail(email);
+  // Email first: it identifies the person even when their display name changes.
+  const colour = isLoading ? undefined : getAvatarColour(email || name || "");
 
   return (
     <>
@@ -47,7 +51,9 @@ const Avatar = ({
             size === "xs" && "h-5 w-5",
             size === "sm" && "h-6 w-6",
             size === "lg" && "h-12 w-12",
+            size === "xl" && "h-16 w-16",
           )}
+          style={colour ? { backgroundColor: colour } : undefined}
         >
           {icon ? (
             <span className="text-[12px] text-white">{icon}</span>
@@ -58,6 +64,7 @@ const Avatar = ({
                 size === "xs" && "text-[8px]",
                 size === "sm" && "text-[10px]",
                 size === "lg" && "text-md",
+                size === "xl" && "text-xl",
               )}
             >
               {initials}

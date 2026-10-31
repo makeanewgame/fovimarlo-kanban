@@ -60,6 +60,7 @@ describe("webhook utilities", () => {
         title: "Test Card",
         description: undefined,
         dueDate: null,
+        priority: null,
         listId: "list-456",
         boardId: "board-789",
       });

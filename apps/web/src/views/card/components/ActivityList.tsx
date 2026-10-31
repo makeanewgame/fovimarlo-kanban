@@ -8,6 +8,7 @@ import {
   HiOutlineArrowRight,
   HiOutlineCheckCircle,
   HiOutlineClock,
+  HiOutlineFlag,
   HiOutlinePaperClip,
   HiOutlinePencil,
   HiOutlinePlus,
@@ -21,10 +22,12 @@ import type {
   GetCardActivitiesOutput,
   GetCardByIdOutput,
 } from "@kan/api/types";
+import type { CardPriority } from "@kan/shared/constants";
 import { authClient } from "@kan/auth/client";
 
 import type { ActivitySortOrder } from "~/hooks/useActivitySortOrder";
 import Avatar from "~/components/Avatar";
+import { getPriorityLabel } from "~/components/PriorityBadge";
 import { useLocalisation } from "~/hooks/useLocalisation";
 import { api } from "~/utils/api";
 import { getAvatarUrl } from "~/utils/helpers";
@@ -67,6 +70,7 @@ const getActivityText = ({
   label,
   fromTitle,
   toDueDate,
+  toPriority,
   dateLocale,
   mergedLabels,
   attachmentName,
@@ -82,6 +86,7 @@ const getActivityText = ({
   fromTitle?: string | null;
   fromDueDate?: Date | null;
   toDueDate?: Date | null;
+  toPriority?: CardPriority | null;
   dateLocale: DateFnsLocale;
   mergedLabels?: string[];
   attachmentName?: string | null;
@@ -143,6 +148,9 @@ const getActivityText = ({
     "card.updated.dueDate.added": t`set the due date`,
     "card.updated.dueDate.updated": t`updated the due date`,
     "card.updated.dueDate.removed": t`removed the due date`,
+    "card.updated.priority.added": t`set the priority`,
+    "card.updated.priority.updated": t`updated the priority`,
+    "card.updated.priority.removed": t`removed the priority`,
   } as const;
 
   if (!(type in ACTIVITY_TYPE_MAP)) return null;
@@ -325,6 +333,24 @@ const getActivityText = ({
     return <Trans>removed the due date</Trans>;
   }
 
+  if (type === "card.updated.priority.added" && toPriority) {
+    const priorityLabel = getPriorityLabel(toPriority);
+    return (
+      <Trans>
+        set the priority to <TextHighlight>{priorityLabel}</TextHighlight>
+      </Trans>
+    );
+  }
+
+  if (type === "card.updated.priority.updated" && toPriority) {
+    const priorityLabel = getPriorityLabel(toPriority);
+    return (
+      <Trans>
+        changed the priority to <TextHighlight>{priorityLabel}</TextHighlight>
+      </Trans>
+    );
+  }
+
   return baseText;
 };
 
@@ -350,6 +376,9 @@ const ACTIVITY_ICON_MAP: Partial<Record<ActivityType, React.ReactNode | null>> =
     "card.updated.dueDate.added": <HiOutlineClock />,
     "card.updated.dueDate.updated": <HiOutlineClock />,
     "card.updated.dueDate.removed": <HiOutlineClock />,
+    "card.updated.priority.added": <HiOutlineFlag />,
+    "card.updated.priority.updated": <HiOutlineFlag />,
+    "card.updated.priority.removed": <HiOutlineFlag />,
   } as const;
 
 const getActivityIcon = (
@@ -396,6 +425,7 @@ const ActivityItems = ({
       fromTitle: activity.fromTitle ?? null,
       fromDueDate: activity.fromDueDate ?? null,
       toDueDate: activity.toDueDate ?? null,
+      toPriority: activity.toPriority ?? null,
       dateLocale,
       mergedLabels: (activity as ActivityWithMergedLabels).mergedLabels,
       attachmentName:

@@ -13,7 +13,7 @@ import {
 } from "drizzle-orm";
 
 import type { dbClient } from "@kan/db/client";
-import type { BoardVisibilityStatus } from "@kan/db/schema";
+import type { BoardVisibilityStatus, CardPriority } from "@kan/db/schema";
 import {
   boards,
   cardActivities,
@@ -258,6 +258,7 @@ export const getByPublicId = async (
               listId: true,
               index: true,
               dueDate: true,
+              priority: true,
               cardNumber: true,
             },
             with: {
@@ -455,6 +456,7 @@ export const getBySlug = async (
               listId: true,
               index: true,
               dueDate: true,
+              priority: true,
               cardNumber: true,
             },
             with: {
@@ -782,6 +784,7 @@ export const createFromSnapshot = async (
           title: string;
           description: string | null;
           index: number;
+          priority?: CardPriority | null;
           labels: {
             publicId: string;
             name: string;
@@ -893,6 +896,7 @@ export const createFromSnapshot = async (
             createdBy: args.createdBy,
             listId: newListId,
             index: card.index,
+            priority: card.priority ?? null,
           })
           .returning({ id: cards.id });
 

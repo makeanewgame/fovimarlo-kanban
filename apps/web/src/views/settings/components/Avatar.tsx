@@ -8,6 +8,7 @@ import "react-image-crop/dist/ReactCrop.css";
 
 import { generateUID } from "@kan/shared/utils";
 
+import UserAvatar from "~/components/Avatar";
 import Button from "~/components/Button";
 import Modal from "~/components/modal";
 import { usePopup } from "~/providers/popup";
@@ -43,9 +44,13 @@ const AnyReactCrop = ReactCrop as unknown as React.FC<ReactCropProps>;
 export default function Avatar({
   userId,
   userImage,
+  userName,
+  userEmail,
 }: {
   userId: string | undefined;
   userImage: string | null | undefined;
+  userName: string | null | undefined;
+  userEmail: string | undefined;
 }) {
   const utils = api.useUtils();
   const { showPopup } = usePopup();
@@ -232,15 +237,12 @@ export default function Avatar({
             className="rounded-full"
           />
         ) : (
-          <span className="inline-block h-16 w-16 overflow-hidden rounded-full bg-light-400 dark:bg-dark-400">
-            <svg
-              className="h-full w-full text-dark-700"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
-            </svg>
-          </span>
+          <UserAvatar
+            size="xl"
+            name={userName ?? ""}
+            email={userEmail ?? ""}
+            isLoading={!userEmail}
+          />
         )}
       </div>
 

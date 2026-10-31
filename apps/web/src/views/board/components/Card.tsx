@@ -7,10 +7,13 @@ import {
 } from "react-icons/hi2";
 import { twMerge } from "tailwind-merge";
 
+import type { CardPriority } from "@kan/shared/constants";
+
 import Avatar from "~/components/Avatar";
 import Badge from "~/components/Badge";
 import CircularProgress from "~/components/CircularProgress";
 import LabelIcon from "~/components/LabelIcon";
+import PriorityBadge from "~/components/PriorityBadge";
 import { useLocalisation } from "~/hooks/useLocalisation";
 import { getAvatarUrl } from "~/utils/helpers";
 
@@ -24,6 +27,7 @@ const Card = ({
   comments,
   attachments,
   dueDate,
+  priority,
 }: {
   title: string;
   ticketNumber?: string | null;
@@ -47,6 +51,7 @@ const Card = ({
   comments: { publicId: string }[];
   attachments?: { publicId: string }[];
   dueDate?: Date | null;
+  priority?: CardPriority | null;
 }) => {
   const { dateLocale } = useLocalisation();
   const showYear = dueDate ? !isSameYear(dueDate, new Date()) : false;
@@ -69,10 +74,13 @@ const Card = ({
 
   return (
     <div className="flex flex-col overflow-hidden rounded-md border border-light-200 bg-light-50 px-3 py-2 text-sm text-neutral-900 dark:border-dark-200 dark:bg-dark-200 dark:text-dark-1000 dark:hover:bg-dark-300">
-      {ticketNumber && (
-        <span className="mb-1 text-xs text-light-700 dark:text-dark-800">
-          {ticketNumber}
-        </span>
+      {(ticketNumber ?? priority) && (
+        <div className="mb-1 flex items-center justify-between gap-2">
+          <span className="text-xs text-light-700 dark:text-dark-800">
+            {ticketNumber}
+          </span>
+          {priority && <PriorityBadge priority={priority} />}
+        </div>
       )}
       <span className="break-words">{title}</span>
       {labels.length ||

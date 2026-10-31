@@ -9,6 +9,8 @@ import * as checklistRepo from "@kan/db/repository/checklist.repo";
 import * as labelRepo from "@kan/db/repository/label.repo";
 import * as listRepo from "@kan/db/repository/list.repo";
 import * as workspaceRepo from "@kan/db/repository/workspace.repo";
+import type { CardPriority } from "@kan/shared/constants";
+import { cardPriorities } from "@kan/shared/constants";
 import {
   generateAttachmentUrl,
   normalizeDescription,
@@ -57,6 +59,7 @@ export const cardRouter = createTRPCRouter({
         memberPublicIds: z.array(z.string().min(12)),
         position: z.enum(["start", "end"]),
         dueDate: z.date().nullable().optional(),
+        priority: z.enum(cardPriorities).nullable().optional(),
       }),
     )
     .output(cardCreateResponseSchema)
@@ -132,6 +135,7 @@ export const cardRouter = createTRPCRouter({
         workspaceId: list.workspaceId,
         position: input.position,
         dueDate: input.dueDate ?? null,
+        priority: input.priority ?? null,
       });
 
       const newCardId = newCard.id;
@@ -197,6 +201,15 @@ export const cardRouter = createTRPCRouter({
         await cardActivityRepo.bulkCreate(ctx.db, cardActivitesInsert);
       }
 
+      if (newCardId && input.priority) {
+        await cardActivityRepo.create(ctx.db, {
+          type: "card.updated.priority.added",
+          cardId: newCardId,
+          createdBy: userId,
+          toPriority: input.priority,
+        });
+      }
+
       if (input.description) {
         void sendMentionEmails({
           db: ctx.db,
@@ -219,6 +232,7 @@ export const cardRouter = createTRPCRouter({
             title: input.title,
             description: input.description,
             dueDate: input.dueDate ?? null,
+            priority: input.priority ?? null,
             listId: list.publicId,
           },
           {
@@ -921,6 +935,7 @@ export const cardRouter = createTRPCRouter({
         index: z.number().optional(),
         listPublicId: z.string().min(12).optional(),
         dueDate: z.date().nullable().optional(),
+        priority: z.enum(cardPriorities).nullable().optional(),
       }),
     )
     .output(cardUpdateResponseSchema)
@@ -994,10 +1009,14 @@ export const cardRouter = createTRPCRouter({
             description: string | null;
             publicId: string;
             dueDate: Date | null;
+            priority: CardPriority | null;
           }
         | undefined;
 
       const previousDueDate = existingCard.dueDate;
+      const previousPriority = existingCard.priority;
+      const priorityChanged =
+        input.priority !== undefined && previousPriority !== input.priority;
       const normalizedDescription =
         input.description !== undefined
           ? normalizeDescription(input.description)
@@ -1009,7 +1028,8 @@ export const cardRouter = createTRPCRouter({
       if (
         input.title ||
         normalizedDescription !== undefined ||
-        input.dueDate !== undefined
+        input.dueDate !== undefined ||
+        input.priority !== undefined
       ) {
         result = await cardRepo.update(
           ctx.db,
@@ -1019,6 +1039,7 @@ export const cardRouter = createTRPCRouter({
               description: normalizedDescription,
             }),
             ...(input.dueDate !== undefined && { dueDate: input.dueDate }),
+            ...(input.priority !== undefined && { priority: input.priority }),
           },
           { cardPublicId: input.cardPublicId },
         );
@@ -1096,6 +1117,29 @@ export const cardRouter = createTRPCRouter({
         });
       }
 
+      if (priorityChanged) {
+        let activityType:
+          | "card.updated.priority.added"
+          | "card.updated.priority.updated"
+          | "card.updated.priority.removed";
+
+        if (!previousPriority) {
+          activityType = "card.updated.priority.added";
+        } else if (!input.priority) {
+          activityType = "card.updated.priority.removed";
+        } else {
+          activityType = "card.updated.priority.updated";
+        }
+
+        activities.push({
+          type: activityType,
+          cardId: result.id,
+          createdBy: userId,
+          fromPriority: previousPriority ?? undefined,
+          toPriority: input.priority ?? undefined,
+        });
+      }
+
       if (newListId && existingCard.listId !== newListId) {
         activities.push({
           type: "card.updated.list" as const,
@@ -1127,6 +1171,12 @@ export const cardRouter = createTRPCRouter({
       ) {
         webhookChanges.dueDate = { from: previousDueDate, to: input.dueDate };
       }
+      if (priorityChanged) {
+        webhookChanges.priority = {
+          from: previousPriority,
+          to: input.priority,
+        };
+      }
       const movedToNewList = Boolean(
         newListId && existingCard.listId !== newListId,
       );
@@ -1156,6 +1206,7 @@ export const cardRouter = createTRPCRouter({
             title: result.title,
             description: result.description,
             dueDate: result.dueDate,
+            priority: result.priority,
             listId: currentWebhookListPublicId,
           },
           {
@@ -1252,6 +1303,7 @@ export const cardRouter = createTRPCRouter({
               title: fullCard.title,
               description: fullCard.description,
               dueDate: fullCard.dueDate,
+              priority: fullCard.priority,
               listId: fullCard.list.publicId,
             },
             {
@@ -1382,6 +1434,7 @@ export const cardRouter = createTRPCRouter({
         workspaceId: targetList.workspaceId,
         position: "end",
         dueDate: sourceCard.dueDate ?? null,
+        priority: sourceCard.priority ?? null,
       });
 
       if (input.index !== undefined && input.index >= 0) {

@@ -61,6 +61,7 @@ vi.mock("@kan/shared/utils", () => ({
 }));
 
 vi.mock("@kan/shared/constants", () => ({
+  cardPriorities: ["low", "medium", "high"],
   colours: [],
 }));
 

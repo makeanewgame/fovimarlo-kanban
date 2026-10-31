@@ -12,6 +12,7 @@ import {
 } from "react-icons/hi2";
 
 import type { NewCardInput } from "@kan/api/types";
+import type { CardPriority } from "@kan/shared/constants";
 import { generateUID } from "@kan/shared/utils";
 
 import type { WorkspaceMember } from "~/components/Editor";
@@ -22,17 +23,20 @@ import DateSelector from "~/components/DateSelector";
 import Editor from "~/components/Editor";
 import Input from "~/components/Input";
 import LabelIcon from "~/components/LabelIcon";
+import PriorityBadge, { getPriorityOptions } from "~/components/PriorityBadge";
 import Toggle from "~/components/Toggle";
 import { useModalFormState } from "~/hooks/useModalFormState";
 import { useModal } from "~/providers/modal";
 import { usePopup } from "~/providers/popup";
 import { useWorkspace } from "~/providers/workspace";
 import { api } from "~/utils/api";
+import { getAvatarColour } from "~/utils/avatarColours";
 import { formatMemberDisplayName, getAvatarUrl } from "~/utils/helpers";
 
 type NewCardFormInput = NewCardInput & {
   isCreateAnotherEnabled: boolean;
   dueDate?: Date | null;
+  priority?: CardPriority | null;
 };
 
 interface QueryParams {
@@ -75,6 +79,7 @@ export function NewCardForm({
       isCreateAnotherEnabled: false,
       position: "start",
       dueDate: initialDueDate,
+      priority: null,
     },
     resetOnClose: true,
   });
@@ -91,6 +96,7 @@ export function NewCardForm({
   const title = watch("title");
   const description = watch("description");
   const dueDate = watch("dueDate");
+  const priority = watch("priority");
   const [isDateSelectorOpen, setIsDateSelectorOpen] = useState(false);
 
   // Files queued for upload after the card is created. Kept outside of
@@ -156,6 +162,7 @@ export function NewCardForm({
               listId: 2,
               description: "",
               dueDate: args.dueDate ?? null,
+              priority: args.priority ?? null,
               cardNumber: null,
               comments: [],
               checklists: [],
@@ -217,6 +224,7 @@ export function NewCardForm({
           isCreateAnotherEnabled,
           position,
           dueDate: null,
+          priority: null,
         };
         reset(newFormState);
         saveFormState(newFormState);
@@ -253,6 +261,7 @@ export function NewCardForm({
         member.user?.name ?? null,
         member.user?.email ?? member.email,
       ),
+      email: member.user?.email ?? member.email,
       selected: memberPublicIds.includes(member.publicId),
       leftIcon: (
         <Avatar
@@ -315,6 +324,7 @@ export function NewCardForm({
         memberPublicIds: data.memberPublicIds,
         position: data.position,
         dueDate: data.dueDate ?? null,
+        priority: data.priority ?? null,
       });
     } catch {
       // onError already surfaced the failure; keep the files queued for retry.
@@ -496,6 +506,11 @@ export function NewCardForm({
                           <span
                             key={member?.key}
                             className="inline-flex h-4 w-4 items-center justify-center rounded-full bg-gray-400 ring-1 ring-light-200 dark:ring-dark-500"
+                            style={{
+                              backgroundColor: getAvatarColour(
+                                member?.email ?? "",
+                              ),
+                            }}
                           >
                             <span className="text-[8px] font-medium leading-none text-white">
                               {member?.value
@@ -606,6 +621,22 @@ export function NewCardForm({
                 </div>
               </>
             )}
+          </div>
+          <div className="w-fit">
+            <CheckboxDropdown
+              items={getPriorityOptions(priority)}
+              handleSelect={(_groupKey, item) =>
+                setValue(
+                  "priority",
+                  item.key === priority ? null : (item.key as CardPriority),
+                )
+              }
+              ariaLabel={t`Priority`}
+            >
+              <div className="flex h-full w-full items-center rounded-[5px] border-[1px] border-light-600 bg-light-200 px-2 py-1 text-left text-xs text-light-800 hover:bg-light-300 dark:border-dark-600 dark:bg-dark-400 dark:text-dark-1000 dark:hover:bg-dark-500">
+                {priority ? <PriorityBadge priority={priority} /> : t`Priority`}
+              </div>
+            </CheckboxDropdown>
           </div>
           <button
             onClick={(e) => {

@@ -9,6 +9,7 @@ import { twMerge } from "tailwind-merge";
 
 import { authClient } from "@kan/auth/client";
 
+import Avatar from "~/components/Avatar";
 import { env } from "~/env";
 import { useIsMobile } from "~/hooks/useMediaQuery";
 import { useKeyboardShortcuts } from "~/providers/keyboard-shortcuts";
@@ -88,15 +89,7 @@ export default function UserMenu({
                 alt=""
               />
             ) : (
-              <span className="inline-block h-6 w-6 overflow-hidden rounded-full bg-light-400 dark:bg-dark-400">
-                <svg
-                  className="h-full w-full text-dark-700"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
-                </svg>
-              </span>
+              <Avatar size="sm" name={displayName ?? ""} email={email} />
             )}
             <span
               className={twMerge(

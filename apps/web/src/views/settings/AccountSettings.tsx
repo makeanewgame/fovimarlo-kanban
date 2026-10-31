@@ -29,7 +29,12 @@ export default function AccountSettings() {
         <h2 className="mb-4 mt-8 text-[14px] font-bold text-neutral-900 dark:text-dark-1000">
           {t`Profile picture`}
         </h2>
-        <Avatar userId={data?.id} userImage={data?.image} />
+        <Avatar
+          userId={data?.id}
+          userImage={data?.image}
+          userName={data?.name}
+          userEmail={data?.email}
+        />
 
         <div className="mb-4">
           <h2 className="mb-4 mt-8 text-[14px] font-bold text-neutral-900 dark:text-dark-1000">

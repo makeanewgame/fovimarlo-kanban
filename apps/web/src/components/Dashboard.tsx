@@ -1,7 +1,6 @@
 import { useRouter, useSearchParams } from "next/navigation";
 import { t } from "@lingui/core/macro";
 import { env } from "next-runtime-env";
-import { useTheme } from "next-themes";
 import { useEffect, useRef, useState } from "react";
 import {
   TbLayoutSidebarLeftCollapse,
@@ -47,7 +46,6 @@ export default function Dashboard({
   rightPanel,
   hasRightPanel = false,
 }: DashboardProps) {
-  const { resolvedTheme } = useTheme();
   const { openModal, closeModal, modalContentType } = useModal();
   const { availableWorkspaces, hasLoaded } = useWorkspace();
   const { showPopup } = usePopup();
@@ -167,8 +165,6 @@ export default function Dashboard({
     }
   }, [user, userLoading, openModal]);
 
-  const isDarkMode = resolvedTheme === "dark";
-
   return (
     <>
       <style jsx global>{`
@@ -176,7 +172,10 @@ export default function Dashboard({
           height: 100vh;
           overflow: hidden;
           min-width: 320px;
-          background-color: ${!isDarkMode ? "hsl(0deg 0% 97.3%)" : "#1c1c1c"};
+          background-color: hsl(0deg 0% 97.3%);
+        }
+        html.dark {
+          background-color: #1c1c1c;
         }
       `}</style>
       <div className="relative flex h-screen flex-col bg-light-50 dark:bg-dark-50 md:bg-light-100 md:p-3 md:dark:bg-dark-100">

@@ -15,6 +15,10 @@ export function registerCardTools(server: McpServer, client: KanClient): void {
         .optional()
         .describe("Card description (markdown supported)"),
       dueDate: z.string().optional().describe("Due date in ISO 8601 format"),
+      priority: z
+        .enum(["low", "medium", "high"])
+        .optional()
+        .describe("Card priority"),
       labelPublicIds: z
         .array(z.string())
         .optional()
@@ -33,6 +37,7 @@ export function registerCardTools(server: McpServer, client: KanClient): void {
       title,
       description,
       dueDate,
+      priority,
       labelPublicIds,
       memberPublicIds,
       position,
@@ -42,6 +47,7 @@ export function registerCardTools(server: McpServer, client: KanClient): void {
         title,
         description,
         dueDate,
+        priority,
         labelPublicIds: labelPublicIds ?? [],
         memberPublicIds: memberPublicIds ?? [],
         position: position ?? "end",
@@ -66,7 +72,7 @@ export function registerCardTools(server: McpServer, client: KanClient): void {
 
   server.tool(
     "update_card",
-    "Update a card's title, description, due date, or move it to another list",
+    "Update a card's title, description, due date, priority, or move it to another list",
     {
       cardPublicId: z.string().describe("The card's public ID"),
       title: z.string().optional().describe("New card title"),
@@ -76,16 +82,29 @@ export function registerCardTools(server: McpServer, client: KanClient): void {
         .nullable()
         .optional()
         .describe("Due date in ISO 8601, or null to clear"),
+      priority: z
+        .enum(["low", "medium", "high"])
+        .nullable()
+        .optional()
+        .describe("Card priority, or null to clear"),
       listPublicId: z
         .string()
         .optional()
         .describe("Move card to this list (public ID)"),
     },
-    async ({ cardPublicId, title, description, dueDate, listPublicId }) => {
+    async ({
+      cardPublicId,
+      title,
+      description,
+      dueDate,
+      priority,
+      listPublicId,
+    }) => {
       const data = await client.request("PUT", `/cards/${cardPublicId}`, {
         title,
         description,
         dueDate,
+        priority,
         listPublicId,
       });
       return {

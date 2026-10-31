@@ -2,7 +2,7 @@ import crypto from "crypto";
 import { z } from "zod";
 
 import type { dbClient } from "@kan/db/client";
-import type { WebhookEvent } from "@kan/db/schema";
+import type { CardPriority, WebhookEvent } from "@kan/db/schema";
 import * as webhookRepo from "@kan/db/repository/webhook.repo";
 import { createLogger } from "@kan/logger";
 
@@ -20,6 +20,7 @@ export interface WebhookPayload {
       title: string;
       description?: string | null;
       dueDate?: string | null; // ISO string after JSON serialization
+      priority?: CardPriority | null;
       listId: string;
       boardId: string;
     };
@@ -226,6 +227,7 @@ export function createCardWebhookPayload(
     title: string;
     description?: string | null;
     dueDate?: Date | null;
+    priority?: CardPriority | null;
     listId: string;
   },
   context: {
@@ -249,6 +251,7 @@ export function createCardWebhookPayload(
         title: card.title,
         description: card.description,
         dueDate: card.dueDate?.toISOString() ?? null,
+        priority: card.priority ?? null,
         listId: card.listId,
         boardId: context.boardId,
       },

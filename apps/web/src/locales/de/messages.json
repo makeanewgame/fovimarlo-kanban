@@ -60,7 +60,7 @@
       ],
       [
         "src/views/card/index.tsx",
-        348
+        358
       ]
     ],
     "translation": "{0} | {1}"
@@ -124,7 +124,7 @@
     "origin": [
       [
         "src/views/board/components/NewCardForm.tsx",
-        563
+        578
       ]
     ],
     "translation": "{0} Labels"
@@ -433,7 +433,7 @@
     "origin": [
       [
         "src/views/card/index.tsx",
-        504
+        514
       ],
       [
         "src/views/public/board/CardModal.tsx",
@@ -656,7 +656,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        103
+        108
       ]
     ],
     "translation": "hat {0} Labels hinzugefügt: <0>{labelList}</0>"
@@ -668,7 +668,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        133
+        138
       ]
     ],
     "translation": "hat eine Checkliste hinzugefügt"
@@ -680,7 +680,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        136
+        141
       ]
     ],
     "translation": "hat ein Checklisten-Element hinzugefügt"
@@ -692,7 +692,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        129
+        134
       ]
     ],
     "translation": "hat ein Label zur Karte hinzugefügt"
@@ -704,7 +704,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        131
+        136
       ]
     ],
     "translation": "hat ein Mitglied zur Karte hinzugefügt"
@@ -716,7 +716,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        141
+        146
       ]
     ],
     "translation": "hat einen Anhang hinzugefügt"
@@ -732,7 +732,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        279
+        287
       ]
     ],
     "translation": "hat einen Anhang hinzugefügt <0>{0}</0>"
@@ -748,7 +748,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        209
+        217
       ]
     ],
     "translation": "hat Checkliste <0>{0}</0> hinzugefügt"
@@ -764,7 +764,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        233
+        241
       ]
     ],
     "translation": "hat Checklisten-Element <0>{0}</0> hinzugefügt"
@@ -780,7 +780,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        193
+        201
       ]
     ],
     "translation": "hat Label <0>{0}</0> hinzugefügt"
@@ -823,7 +823,7 @@
     "origin": [
       [
         "src/views/settings/components/Avatar.tsx",
-        256
+        258
       ]
     ],
     "translation": "Passen Sie den quadratischen Zuschnitt an Ihren Avatar an."
@@ -1336,7 +1336,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        173
+        181
       ]
     ],
     "translation": "hat <0>{0}</0> der Karte zugewiesen"
@@ -1360,11 +1360,11 @@
     "origin": [
       [
         "src/views/board/components/NewCardForm.tsx",
-        626
+        661
       ],
       [
         "src/views/board/components/NewCardForm.tsx",
-        627
+        662
       ]
     ],
     "translation": "Dateien anhängen"
@@ -1623,7 +1623,7 @@
       ],
       [
         "src/views/card/index.tsx",
-        348
+        358
       ],
       [
         "src/views/public/board/index.tsx",
@@ -2377,7 +2377,7 @@
       ],
       [
         "src/views/settings/components/Avatar.tsx",
-        287
+        289
       ],
       [
         "src/views/settings/components/ChangePasswordConfirmation.tsx",
@@ -2409,7 +2409,7 @@
     "origin": [
       [
         "src/views/card/index.tsx",
-        348
+        358
       ]
     ],
     "translation": "Karte"
@@ -2461,11 +2461,11 @@
     "origin": [
       [
         "src/views/card/index.tsx",
-        411
+        421
       ],
       [
         "src/views/card/index.tsx",
-        448
+        458
       ]
     ],
     "translation": "Karte nicht gefunden"
@@ -2489,7 +2489,7 @@
     "origin": [
       [
         "src/views/board/components/NewCardForm.tsx",
-        429
+        439
       ]
     ],
     "translation": "Kartentitel"
@@ -2533,11 +2533,11 @@
     "origin": [
       [
         "src/views/settings/AccountSettings.tsx",
-        88
+        93
       ],
       [
         "src/views/settings/AccountSettings.tsx",
-        100
+        105
       ],
       [
         "src/views/settings/components/ChangePasswordConfirmation.tsx",
@@ -2557,7 +2557,7 @@
     "origin": [
       [
         "src/views/settings/AccountSettings.tsx",
-        63
+        68
       ]
     ],
     "translation": "Schriftgröße der Anwendung ändern."
@@ -2569,7 +2569,7 @@
     "origin": [
       [
         "src/views/settings/AccountSettings.tsx",
-        53
+        58
       ]
     ],
     "translation": "Ändern Sie Ihre Spracheinstellungen."
@@ -2585,14 +2585,30 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        304
+        312
       ],
       [
         "src/views/card/components/ActivityList.tsx",
-        318
+        326
       ]
     ],
     "translation": "hat das Fälligkeitsdatum auf <0>{formattedDate}</0> geändert"
+  },
+  "Oc2rgi": {
+    "translation": "",
+    "message": "changed the priority to <0>{priorityLabel}</0>",
+    "placeholders": {
+      "priorityLabel": [
+        "priorityLabel"
+      ]
+    },
+    "comments": [],
+    "origin": [
+      [
+        "src/views/card/components/ActivityList.tsx",
+        348
+      ]
+    ]
   },
   "pFGfsR": {
     "message": "Check out some of our favorite open source projects.",
@@ -2765,7 +2781,7 @@
       ],
       [
         "src/views/card/index.tsx",
-        402
+        412
       ],
       [
         "src/views/members/components/EditMemberPermissionsModal.tsx",
@@ -2913,7 +2929,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        138
+        143
       ]
     ],
     "translation": "hat einen Checklistenpunkt abgeschlossen"
@@ -2929,7 +2945,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        250
+        258
       ]
     ],
     "translation": "hat Checklistenpunkt <0>{0}</0> abgeschlossen"
@@ -3320,7 +3336,7 @@
       ],
       [
         "src/views/board/components/NewCardForm.tsx",
-        658
+        693
       ],
       [
         "src/views/board/components/NewListForm.tsx",
@@ -3348,7 +3364,7 @@
     "origin": [
       [
         "src/views/board/components/NewCardForm.tsx",
-        668
+        703
       ]
     ],
     "translation": "Karte erstellen"
@@ -3440,7 +3456,7 @@
     "origin": [
       [
         "src/views/board/components/NewCardForm.tsx",
-        525
+        540
       ],
       [
         "src/views/card/components/LabelSelector.tsx",
@@ -3524,7 +3540,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        125
+        130
       ]
     ],
     "translation": "hat die Karte erstellt"
@@ -3556,7 +3572,7 @@
     "origin": [
       [
         "src/views/settings/components/Avatar.tsx",
-        253
+        255
       ]
     ],
     "translation": "Avatar zuschneiden"
@@ -3748,7 +3764,7 @@
     "origin": [
       [
         "src/components/UserMenu.tsx",
-        158
+        151
       ]
     ],
     "translation": "Dunkel"
@@ -3840,11 +3856,11 @@
     "origin": [
       [
         "src/views/settings/AccountSettings.tsx",
-        70
+        75
       ],
       [
         "src/views/settings/AccountSettings.tsx",
-        80
+        85
       ],
       [
         "src/views/settings/components/DeleteAccountConfirmation.tsx",
@@ -3968,7 +3984,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        135
+        140
       ]
     ],
     "translation": "hat eine Checkliste gelöscht"
@@ -3980,7 +3996,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        140
+        145
       ]
     ],
     "translation": "hat ein Checklisten-Element gelöscht"
@@ -3996,7 +4012,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        225
+        233
       ]
     ],
     "translation": "hat Checkliste <0>{0}</0> gelöscht"
@@ -4012,7 +4028,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        268
+        276
       ]
     ],
     "translation": "hat Checklisten-Element <0>{0}</0> gelöscht"
@@ -4084,7 +4100,7 @@
     "origin": [
       [
         "src/views/settings/AccountSettings.tsx",
-        36
+        41
       ],
       [
         "src/views/settings/components/UpdateDisplayNameForm.tsx",
@@ -4185,7 +4201,7 @@
     "origin": [
       [
         "src/components/UserMenu.tsx",
-        209
+        202
       ],
       [
         "src/views/boards/components/TemplateBoards.tsx",
@@ -4289,11 +4305,11 @@
       ],
       [
         "src/views/board/components/NewCardForm.tsx",
-        580
+        595
       ],
       [
         "src/views/card/index.tsx",
-        159
+        169
       ]
     ],
     "translation": "Fälligkeitsdatum"
@@ -4533,7 +4549,7 @@
       ],
       [
         "src/views/settings/AccountSettings.tsx",
-        43
+        48
       ]
     ],
     "translation": "E-Mail"
@@ -4967,11 +4983,11 @@
     "origin": [
       [
         "src/views/settings/components/Avatar.tsx",
-        69
+        74
       ],
       [
         "src/views/settings/components/Avatar.tsx",
-        199
+        204
       ]
     ],
     "translation": "Fehler beim Hochladen des Profilbilds"
@@ -5267,7 +5283,7 @@
       ],
       [
         "src/components/UserMenu.tsx",
-        217
+        210
       ]
     ],
     "translation": "Feedback"
@@ -5327,7 +5343,7 @@
     "origin": [
       [
         "src/views/settings/AccountSettings.tsx",
-        60
+        65
       ]
     ],
     "translation": "Schriftgröße"
@@ -5823,6 +5839,18 @@
       ]
     ],
     "translation": ""
+  },
+  "yx/fMc": {
+    "translation": "",
+    "message": "High",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/components/PriorityBadge.tsx",
+        32
+      ]
+    ]
   },
   "CB/NpV": {
     "message": "High Priority",
@@ -6461,7 +6489,7 @@
       ],
       [
         "src/views/board/components/NewCardForm.tsx",
-        529
+        544
       ],
       [
         "src/views/card/components/LabelSelector.tsx",
@@ -6469,7 +6497,7 @@
       ],
       [
         "src/views/card/index.tsx",
-        139
+        140
       ]
     ],
     "translation": "Labels"
@@ -6505,7 +6533,7 @@
     "origin": [
       [
         "src/views/settings/AccountSettings.tsx",
-        50
+        55
       ]
     ],
     "translation": "Sprache"
@@ -6639,7 +6667,7 @@
     "origin": [
       [
         "src/components/UserMenu.tsx",
-        172
+        165
       ]
     ],
     "translation": "Hell"
@@ -6691,7 +6719,7 @@
       ],
       [
         "src/views/card/index.tsx",
-        130
+        131
       ]
     ],
     "translation": "Liste"
@@ -6751,7 +6779,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        664
+        694
       ]
     ],
     "translation": "Weitere Aktivitäten laden"
@@ -6775,7 +6803,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        664
+        694
       ]
     ],
     "translation": "Wird geladen ..."
@@ -6799,7 +6827,7 @@
     "origin": [
       [
         "src/components/UserMenu.tsx",
-        227
+        220
       ]
     ],
     "translation": "Abmelden"
@@ -6827,6 +6855,18 @@
       ]
     ],
     "translation": "Weltweit von Teams geliebt"
+  },
+  "nTWWCZ": {
+    "translation": "",
+    "message": "Low",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/components/PriorityBadge.tsx",
+        34
+      ]
+    ]
   },
   "O9jVbx": {
     "message": "Low Priority",
@@ -6887,7 +6927,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        139
+        144
       ]
     ],
     "translation": "hat ein Checklistenelement als unvollständig markiert"
@@ -6903,7 +6943,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        259
+        267
       ]
     ],
     "translation": "hat Checklistenelement <0>{0}</0> als unvollständig markiert"
@@ -6928,6 +6968,10 @@
       [
         "src/components/FontSizeSelector.tsx",
         8
+      ],
+      [
+        "src/components/PriorityBadge.tsx",
+        33
       ]
     ],
     "translation": "Mittel"
@@ -6963,11 +7007,11 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        56
+        59
       ],
       [
         "src/views/card/components/ActivityList.tsx",
-        89
+        94
       ],
       [
         "src/views/members/index.tsx",
@@ -7023,7 +7067,7 @@
       ],
       [
         "src/views/board/components/NewCardForm.tsx",
-        487
+        497
       ],
       [
         "src/views/card/components/MemberSelector.tsx",
@@ -7031,7 +7075,7 @@
       ],
       [
         "src/views/card/index.tsx",
-        149
+        150
       ],
       [
         "src/views/members/index.tsx",
@@ -7190,7 +7234,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        161
+        169
       ]
     ],
     "translation": "hat die Karte von <0>{0}</0> nach <1>{1}</1> verschoben"
@@ -7202,7 +7246,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        128
+        133
       ]
     ],
     "translation": "hat die Karte in eine andere Liste verschoben"
@@ -7334,7 +7378,7 @@
     "origin": [
       [
         "src/views/board/components/NewCardForm.tsx",
-        412
+        422
       ]
     ],
     "translation": "Neue Karte"
@@ -7754,7 +7798,7 @@
     "origin": [
       [
         "src/views/settings/AccountSettings.tsx",
-        73
+        78
       ]
     ],
     "translation": "Sobald Sie Ihr Konto löschen, gibt es kein Zurück mehr. Diese Aktion kann nicht rückgängig gemacht werden."
@@ -8314,7 +8358,7 @@
     "origin": [
       [
         "src/views/settings/components/Avatar.tsx",
-        70
+        75
       ]
     ],
     "translation": "Bitte wählen Sie eine Datei zum Hochladen aus."
@@ -8342,7 +8386,7 @@
       ],
       [
         "src/views/board/components/NewCardForm.tsx",
-        200
+        207
       ],
       [
         "src/views/board/components/NewListForm.tsx",
@@ -8422,7 +8466,7 @@
       ],
       [
         "src/views/card/components/DueDateSelector.tsx",
-        64
+        65
       ],
       [
         "src/views/card/components/LabelSelector.tsx",
@@ -8449,12 +8493,16 @@
         43
       ],
       [
-        "src/views/card/index.tsx",
-        259
+        "src/views/card/components/PrioritySelector.tsx",
+        51
       ],
       [
         "src/views/card/index.tsx",
-        272
+        269
+      ],
+      [
+        "src/views/card/index.tsx",
+        282
       ],
       [
         "src/views/members/components/DeleteMemberConfirmation.tsx",
@@ -8490,7 +8538,7 @@
       ],
       [
         "src/views/settings/components/Avatar.tsx",
-        200
+        205
       ],
       [
         "src/views/settings/components/DeleteAccountConfirmation.tsx",
@@ -8635,6 +8683,30 @@
     ],
     "translation": "Preise"
   },
+  "1hKEom": {
+    "translation": "",
+    "message": "Priority",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/views/board/components/NewCardForm.tsx",
+        634
+      ],
+      [
+        "src/views/board/components/NewCardForm.tsx",
+        640
+      ],
+      [
+        "src/views/card/components/PrioritySelector.tsx",
+        79
+      ],
+      [
+        "src/views/card/index.tsx",
+        160
+      ]
+    ]
+  },
   "ESClHO": {
     "message": "Priority email support",
     "placeholders": {},
@@ -8735,7 +8807,7 @@
     "origin": [
       [
         "src/views/settings/components/Avatar.tsx",
-        189
+        194
       ]
     ],
     "translation": "Profilbild aktualisiert"
@@ -8867,7 +8939,7 @@
     "origin": [
       [
         "src/views/board/components/NewCardForm.tsx",
-        645
+        680
       ]
     ],
     "translation": "Datei entfernen"
@@ -8910,7 +8982,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        117
+        122
       ]
     ],
     "translation": "hat {0} Labels entfernt: <0>{labelList}</0>"
@@ -8922,7 +8994,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        130
+        135
       ]
     ],
     "translation": "hat ein Label von der Karte entfernt"
@@ -8934,7 +9006,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        132
+        137
       ]
     ],
     "translation": "hat ein Mitglied von der Karte entfernt"
@@ -8946,7 +9018,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        142
+        147
       ]
     ],
     "translation": "hat einen Anhang entfernt"
@@ -8962,7 +9034,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        289
+        297
       ]
     ],
     "translation": "hat einen Anhang entfernt <0>{0}</0>"
@@ -8990,7 +9062,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        201
+        209
       ]
     ],
     "translation": "hat Label entfernt <0>{0}</0>"
@@ -9002,14 +9074,26 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        145
+        150
       ],
       [
         "src/views/card/components/ActivityList.tsx",
-        325
+        333
       ]
     ],
     "translation": "hat das Fälligkeitsdatum entfernt"
+  },
+  "IpPZIa": {
+    "translation": "",
+    "message": "removed the priority",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/views/card/components/ActivityList.tsx",
+        153
+      ]
+    ]
   },
   "NypLoL": {
     "message": "renamed a checklist",
@@ -9018,7 +9102,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        134
+        139
       ]
     ],
     "translation": "hat eine Checkliste umbenannt"
@@ -9034,7 +9118,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        217
+        225
       ]
     ],
     "translation": "hat Checkliste umbenannt <0>{0}</0>"
@@ -9050,7 +9134,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        241
+        249
       ]
     ],
     "translation": "hat Checklistenelement umbenannt in <0>{0}</0>"
@@ -9243,7 +9327,7 @@
       ],
       [
         "src/views/settings/components/Avatar.tsx",
-        290
+        292
       ]
     ],
     "translation": "Speichern"
@@ -9491,7 +9575,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        170
+        178
       ]
     ],
     "translation": "hat sich die Karte selbst zugewiesen"
@@ -9555,7 +9639,7 @@
     "origin": [
       [
         "src/views/settings/AccountSettings.tsx",
-        93
+        98
       ]
     ],
     "translation": "Legen Sie ein Passwort fest, um die passwortbasierte Anmeldung zu aktivieren."
@@ -9575,7 +9659,7 @@
       ],
       [
         "src/views/card/components/DueDateSelector.tsx",
-        121
+        129
       ]
     ],
     "translation": "Fälligkeitsdatum festlegen"
@@ -9587,11 +9671,11 @@
     "origin": [
       [
         "src/views/settings/AccountSettings.tsx",
-        88
+        93
       ],
       [
         "src/views/settings/AccountSettings.tsx",
-        100
+        105
       ],
       [
         "src/views/settings/components/ChangePasswordConfirmation.tsx",
@@ -9604,6 +9688,18 @@
     ],
     "translation": "Passwort festlegen"
   },
+  "hNmOZ7": {
+    "translation": "",
+    "message": "Set priority",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/views/card/components/PrioritySelector.tsx",
+        89
+      ]
+    ]
+  },
   "Eit43O": {
     "message": "set the due date",
     "placeholders": {},
@@ -9611,10 +9707,38 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        143
+        148
       ]
     ],
     "translation": "hat das Fälligkeitsdatum festgelegt"
+  },
+  "kEWNWZ": {
+    "translation": "",
+    "message": "set the priority",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/views/card/components/ActivityList.tsx",
+        151
+      ]
+    ]
+  },
+  "wAk9bo": {
+    "translation": "",
+    "message": "set the priority to <0>{priorityLabel}</0>",
+    "placeholders": {
+      "priorityLabel": [
+        "priorityLabel"
+      ]
+    },
+    "comments": [],
+    "origin": [
+      [
+        "src/views/card/components/ActivityList.tsx",
+        339
+      ]
+    ]
   },
   "JjEJSy": {
     "message": "Set up your workspace",
@@ -9735,7 +9859,7 @@
     "origin": [
       [
         "src/components/UserMenu.tsx",
-        187
+        180
       ]
     ],
     "translation": "Tastenkombinationen"
@@ -9991,7 +10115,7 @@
     "origin": [
       [
         "src/views/board/components/NewCardForm.tsx",
-        332
+        342
       ]
     ],
     "translation": "Einige Anhänge sind fehlgeschlagen"
@@ -10197,7 +10321,7 @@
     "origin": [
       [
         "src/components/UserMenu.tsx",
-        198
+        191
       ],
       [
         "src/views/pricing/components/FeatureComparisonTable.tsx",
@@ -10225,7 +10349,7 @@
     "origin": [
       [
         "src/components/UserMenu.tsx",
-        144
+        137
       ]
     ],
     "translation": "System"
@@ -10544,7 +10668,7 @@
     "origin": [
       [
         "src/views/board/components/NewCardForm.tsx",
-        333
+        343
       ]
     ],
     "translation": "Die Karte wurde erstellt, aber {failedCount} von {0} Anhängen konnten nicht hochgeladen werden."
@@ -10648,7 +10772,7 @@
     "origin": [
       [
         "src/components/UserMenu.tsx",
-        131
+        124
       ]
     ],
     "translation": "Design"
@@ -11056,7 +11180,7 @@
     "origin": [
       [
         "src/views/card/index.tsx",
-        271
+        281
       ]
     ],
     "translation": "Label konnte nicht hinzugefügt werden"
@@ -11116,7 +11240,7 @@
     "origin": [
       [
         "src/views/board/components/NewCardForm.tsx",
-        197
+        204
       ]
     ],
     "translation": "Karte konnte nicht erstellt werden"
@@ -11424,7 +11548,7 @@
       ],
       [
         "src/views/card/index.tsx",
-        258
+        268
       ]
     ],
     "translation": "Karte konnte nicht aktualisiert werden"
@@ -11476,7 +11600,7 @@
       ],
       [
         "src/views/card/components/DueDateSelector.tsx",
-        63
+        64
       ]
     ],
     "translation": "Fälligkeitsdatum konnte nicht aktualisiert werden"
@@ -11537,6 +11661,18 @@
     ],
     "translation": "Berechtigungen konnten nicht aktualisiert werden"
   },
+  "uPW/GB": {
+    "translation": "",
+    "message": "Unable to update priority",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/views/card/components/PrioritySelector.tsx",
+        50
+      ]
+    ]
+  },
   "TFv5tM": {
     "message": "Unable to update role",
     "placeholders": {},
@@ -11584,7 +11720,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        184
+        192
       ]
     ],
     "translation": "hat <0>{0}</0> von der Karte entfernt"
@@ -11596,7 +11732,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        181
+        189
       ]
     ],
     "translation": "hat sich selbst von der Karte entfernt"
@@ -11851,7 +11987,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        137
+        142
       ]
     ],
     "translation": "hat ein Checklisten-Element aktualisiert"
@@ -11863,7 +11999,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        127
+        132
       ]
     ],
     "translation": "hat die Beschreibung aktualisiert"
@@ -11875,10 +12011,22 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        144
+        149
       ]
     ],
     "translation": "hat das Fälligkeitsdatum aktualisiert"
+  },
+  "ORNzDO": {
+    "translation": "",
+    "message": "updated the priority",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/views/card/components/ActivityList.tsx",
+        152
+      ]
+    ]
   },
   "V3MPSQ": {
     "message": "updated the title",
@@ -11887,7 +12035,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        126
+        131
       ]
     ],
     "translation": "hat den Titel aktualisiert"
@@ -11903,7 +12051,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        153
+        161
       ]
     ],
     "translation": "hat den Titel zu <0>{0}</0> aktualisiert"
@@ -12811,7 +12959,7 @@
     "origin": [
       [
         "src/views/settings/AccountSettings.tsx",
-        92
+        97
       ]
     ],
     "translation": "Sie sind dabei, Ihr Passwort zu ändern."
@@ -13202,7 +13350,7 @@
     "origin": [
       [
         "src/views/settings/components/Avatar.tsx",
-        190
+        195
       ]
     ],
     "translation": "Ihr Profilbild wurde aktualisiert."
