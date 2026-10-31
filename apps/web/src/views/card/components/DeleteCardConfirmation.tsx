@@ -75,7 +75,7 @@ export function DeleteCardConfirmation({
           {t`Are you sure you want to delete this card?`}
         </h2>
         <p className="text-sm font-medium text-light-900 dark:text-dark-900">
-          {t`This action can't be undone.`}
+          {t`You can restore it later from Archived cards in the board menu.`}
         </p>
       </div>
       <div className="mt-5 flex justify-end sm:mt-6">

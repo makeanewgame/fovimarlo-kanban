@@ -152,6 +152,29 @@ export const cardDetailSchema = z.object({
   ),
 });
 
+// ─── card.archived ───────────────────────────────────────────
+export const archivedCardsResponseSchema = z.object({
+  cards: z.array(
+    z.object({
+      publicId: z.string(),
+      title: z.string(),
+      createdBy: z.string().nullable(),
+      archivedAt: z.date(),
+      archivedBy: z.string().nullable(),
+      listName: z.string(),
+      isListDeleted: z.boolean(),
+    }),
+  ),
+  hasMore: z.boolean(),
+});
+
+// ─── card.unarchive ──────────────────────────────────────────
+export const cardUnarchiveResponseSchema = z.object({
+  publicId: z.string(),
+  listName: z.string(),
+  movedToDefaultList: z.boolean(),
+});
+
 // ─── card.getActivities ──────────────────────────────────────
 export const activityItemSchema = z.object({
   publicId: z.string(),

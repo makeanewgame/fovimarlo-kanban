@@ -6,6 +6,7 @@ import {
   eq,
   gt,
   inArray,
+  isNotNull,
   isNull,
   sql,
 } from "drizzle-orm";
@@ -13,6 +14,7 @@ import {
 import type { dbClient } from "@kan/db/client";
 import type { CardPriority } from "@kan/db/schema";
 import {
+  boards,
   cardActivities,
   cardAttachments,
   cards,
@@ -22,6 +24,7 @@ import {
   checklists,
   labels,
   lists,
+  users,
   workspaceMembers,
   workspaces,
 } from "@kan/db/schema";
@@ -1062,6 +1065,135 @@ export const softDelete = async (
     }
 
     return result;
+  });
+};
+
+export const getBoardForArchivedCards = (
+  db: dbClient,
+  boardPublicId: string,
+) => {
+  return db.query.boards.findFirst({
+    columns: { id: true, workspaceId: true },
+    where: and(eq(boards.publicId, boardPublicId), isNull(boards.deletedAt)),
+  });
+};
+
+export const getArchivedByBoardId = async (
+  db: dbClient,
+  boardId: number,
+  options: { limit: number },
+) => {
+  const rows = await db
+    .select({
+      publicId: cards.publicId,
+      title: cards.title,
+      createdBy: cards.createdBy,
+      archivedAt: cards.deletedAt,
+      archivedByName: users.name,
+      archivedByEmail: users.email,
+      listName: lists.name,
+      listDeletedAt: lists.deletedAt,
+    })
+    .from(cards)
+    .innerJoin(lists, eq(cards.listId, lists.id))
+    .leftJoin(users, eq(cards.deletedBy, users.id))
+    .where(and(eq(lists.boardId, boardId), isNotNull(cards.deletedAt)))
+    .orderBy(desc(cards.deletedAt), desc(cards.id))
+    .limit(options.limit + 1);
+
+  return {
+    cards: rows.slice(0, options.limit),
+    hasMore: rows.length > options.limit,
+  };
+};
+
+export const getWorkspaceAndCardIdByArchivedCardPublicId = async (
+  db: dbClient,
+  cardPublicId: string,
+) => {
+  const result = await db.query.cards.findFirst({
+    columns: { id: true, createdBy: true },
+    where: and(eq(cards.publicId, cardPublicId), isNotNull(cards.deletedAt)),
+    with: {
+      list: {
+        columns: { boardId: true },
+        with: {
+          board: {
+            columns: {
+              publicId: true,
+              workspaceId: true,
+              name: true,
+              deletedAt: true,
+            },
+          },
+        },
+      },
+    },
+  });
+
+  if (!result || result.list.board.deletedAt) return undefined;
+
+  return {
+    id: result.id,
+    createdBy: result.createdBy,
+    boardId: result.list.boardId,
+    boardPublicId: result.list.board.publicId,
+    boardName: result.list.board.name,
+    workspaceId: result.list.board.workspaceId,
+  };
+};
+
+/**
+ * Puts an archived card at the end of its original list, or of the board's
+ * first list when the original one was deleted. Returns undefined when the card
+ * is no longer archived and `list: null` when the board has no lists left.
+ */
+export const unarchive = async (
+  db: dbClient,
+  args: { cardId: number; boardId: number },
+) => {
+  return db.transaction(async (tx) => {
+    const [card] = await tx
+      .select({ listId: cards.listId })
+      .from(cards)
+      .where(and(eq(cards.id, args.cardId), isNotNull(cards.deletedAt)))
+      .for("update");
+
+    if (!card) return undefined;
+
+    // Locked so the chosen list can't be deleted and two restores into it
+    // can't take the same index.
+    const boardLists = await tx
+      .select({ id: lists.id, publicId: lists.publicId, name: lists.name })
+      .from(lists)
+      .where(and(eq(lists.boardId, args.boardId), isNull(lists.deletedAt)))
+      .orderBy(asc(lists.index))
+      .for("update");
+
+    const originalListId = card.listId;
+    const list =
+      boardLists.find(({ id }) => id === originalListId) ?? boardLists[0];
+
+    if (!list) return { list: null, originalListId };
+
+    const lastCard = await tx.query.cards.findFirst({
+      columns: { index: true },
+      where: and(eq(cards.listId, list.id), isNull(cards.deletedAt)),
+      orderBy: desc(cards.index),
+    });
+
+    await tx
+      .update(cards)
+      .set({
+        listId: list.id,
+        index: lastCard ? lastCard.index + 1 : 0,
+        deletedAt: null,
+        deletedBy: null,
+        updatedAt: new Date(),
+      })
+      .where(eq(cards.id, args.cardId));
+
+    return { list, originalListId };
   });
 };
 

@@ -23,6 +23,22 @@
     ],
     "translation": ", oder siehe unsere"
   },
+  "XOue+X": {
+    "translation": "",
+    "message": "{0} (deleted list)",
+    "placeholders": {
+      "0": [
+        "card.listName"
+      ]
+    },
+    "comments": [],
+    "origin": [
+      [
+        "src/views/board/components/ArchivedCards.tsx",
+        109
+      ]
+    ]
+  },
   "JArWcF": {
     "message": "{0} | {1}",
     "placeholders": {
@@ -75,7 +91,7 @@
     "origin": [
       [
         "src/views/board/components/BoardDropdown.tsx",
-        63
+        64
       ]
     ],
     "translation": "{0} wurde zu deinen Favoriten hinzugefügt."
@@ -91,7 +107,7 @@
     "origin": [
       [
         "src/views/board/components/BoardDropdown.tsx",
-        64
+        65
       ]
     ],
     "translation": "{0} wurde aus deinen Favoriten entfernt."
@@ -123,7 +139,7 @@
     "origin": [
       [
         "src/views/board/index.tsx",
-        899
+        906
       ]
     ],
     "translation": "{0} nicht gefunden"
@@ -663,7 +679,7 @@
     "origin": [
       [
         "src/views/board/components/BoardDropdown.tsx",
-        138
+        144
       ]
     ],
     "translation": "Zu Favoriten hinzufügen"
@@ -694,7 +710,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        108
+        110
       ]
     ],
     "translation": "hat {0} Labels hinzugefügt: <0>{labelList}</0>"
@@ -706,7 +722,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        138
+        140
       ]
     ],
     "translation": "hat eine Checkliste hinzugefügt"
@@ -718,7 +734,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        141
+        143
       ]
     ],
     "translation": "hat ein Checklisten-Element hinzugefügt"
@@ -730,7 +746,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        134
+        136
       ]
     ],
     "translation": "hat ein Label zur Karte hinzugefügt"
@@ -742,7 +758,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        136
+        138
       ]
     ],
     "translation": "hat ein Mitglied zur Karte hinzugefügt"
@@ -754,7 +770,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        146
+        148
       ]
     ],
     "translation": "hat einen Anhang hinzugefügt"
@@ -770,7 +786,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        287
+        299
       ]
     ],
     "translation": "hat einen Anhang hinzugefügt <0>{0}</0>"
@@ -786,7 +802,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        217
+        229
       ]
     ],
     "translation": "hat Checkliste <0>{0}</0> hinzugefügt"
@@ -802,7 +818,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        241
+        253
       ]
     ],
     "translation": "hat Checklisten-Element <0>{0}</0> hinzugefügt"
@@ -818,7 +834,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        201
+        213
       ]
     ],
     "translation": "hat Label <0>{0}</0> hinzugefügt"
@@ -830,7 +846,7 @@
     "origin": [
       [
         "src/views/board/components/BoardDropdown.tsx",
-        60
+        61
       ]
     ],
     "translation": "Zu Favoriten hinzugefügt"
@@ -1209,7 +1225,7 @@
     "origin": [
       [
         "src/views/board/components/BoardDropdown.tsx",
-        118
+        124
       ]
     ],
     "translation": "Board archivieren"
@@ -1225,6 +1241,69 @@
       ]
     ],
     "translation": "Archiviert"
+  },
+  "gGNF+1": {
+    "translation": "",
+    "message": "Archived {archivedAgo}",
+    "placeholders": {
+      "archivedAgo": [
+        "archivedAgo"
+      ]
+    },
+    "comments": [],
+    "origin": [
+      [
+        "src/views/board/components/ArchivedCards.tsx",
+        114
+      ]
+    ]
+  },
+  "/ignla": {
+    "translation": "",
+    "message": "Archived {archivedAgo} by {0}",
+    "placeholders": {
+      "0": [
+        "card.archivedBy"
+      ],
+      "archivedAgo": [
+        "archivedAgo"
+      ]
+    },
+    "comments": [],
+    "origin": [
+      [
+        "src/views/board/components/ArchivedCards.tsx",
+        113
+      ]
+    ]
+  },
+  "gWlA7i": {
+    "translation": "",
+    "message": "Archived cards",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/views/board/components/ArchivedCards.tsx",
+        66
+      ],
+      [
+        "src/views/board/components/BoardDropdown.tsx",
+        117
+      ]
+    ]
+  },
+  "vx/87p": {
+    "translation": "",
+    "message": "archived the card",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/views/card/components/ActivityList.tsx",
+        156
+      ]
+    ]
   },
   "lo8xBK": {
     "message": "Are you sure want to remove {entityLabel}?",
@@ -1377,7 +1456,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        181
+        193
       ]
     ],
     "translation": "hat <0>{0}</0> der Karte zugewiesen"
@@ -1621,7 +1700,7 @@
     "origin": [
       [
         "src/views/board/index.tsx",
-        865
+        872
       ],
       [
         "src/views/card/index.tsx",
@@ -1641,7 +1720,7 @@
     "origin": [
       [
         "src/views/board/components/BoardDropdown.tsx",
-        49
+        50
       ]
     ],
     "translation": "Board archiviert"
@@ -1665,7 +1744,7 @@
     "origin": [
       [
         "src/views/board/index.tsx",
-        888
+        895
       ]
     ],
     "translation": "Board-Name"
@@ -1713,7 +1792,7 @@
     "origin": [
       [
         "src/views/board/components/BoardDropdown.tsx",
-        167
+        173
       ]
     ],
     "translation": "Board-Optionen"
@@ -1737,7 +1816,7 @@
     "origin": [
       [
         "src/views/board/components/BoardDropdown.tsx",
-        50
+        51
       ]
     ],
     "translation": "Board wiederhergestellt"
@@ -2526,6 +2605,18 @@
     ],
     "translation": "Karten-Optionen"
   },
+  "0zzh5k": {
+    "translation": "",
+    "message": "Card restored",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/views/board/components/ArchivedCards.tsx",
+        37
+      ]
+    ]
+  },
   "ZH7TVS": {
     "message": "Card title",
     "placeholders": {},
@@ -2545,7 +2636,7 @@
     "origin": [
       [
         "src/views/board/index.tsx",
-        438
+        439
       ],
       [
         "src/views/card/components/Dropdown.tsx",
@@ -2629,11 +2720,11 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        312
+        324
       ],
       [
         "src/views/card/components/ActivityList.tsx",
-        326
+        338
       ]
     ],
     "translation": "hat das Fälligkeitsdatum auf <0>{formattedDate}</0> geändert"
@@ -2649,7 +2740,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        348
+        360
       ]
     ],
     "translation": ""
@@ -2824,6 +2915,10 @@
         280
       ],
       [
+        "src/views/board/components/ArchivedCards.tsx",
+        71
+      ],
+      [
         "src/views/card/index.tsx",
         418
       ],
@@ -2947,7 +3042,6 @@
     "translation": "Kommentare"
   },
   "IqHhda": {
-    "translation": "",
     "message": "Comments and activity",
     "placeholders": {},
     "comments": [],
@@ -2956,7 +3050,8 @@
         "src/views/card/index.tsx",
         520
       ]
-    ]
+    ],
+    "translation": ""
   },
   "7i8j3G": {
     "message": "Company",
@@ -3001,7 +3096,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        143
+        145
       ]
     ],
     "translation": "hat einen Checklistenpunkt abgeschlossen"
@@ -3017,7 +3112,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        258
+        270
       ]
     ],
     "translation": "hat Checklistenpunkt <0>{0}</0> abgeschlossen"
@@ -3517,11 +3612,11 @@
     "origin": [
       [
         "src/views/board/index.tsx",
-        139
+        140
       ],
       [
         "src/views/board/index.tsx",
-        1024
+        1031
       ]
     ],
     "translation": "Neue Liste erstellen"
@@ -3597,7 +3692,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        130
+        132
       ]
     ],
     "translation": "hat die Karte erstellt"
@@ -3909,7 +4004,7 @@
     "origin": [
       [
         "src/views/board/components/BoardDropdown.tsx",
-        149
+        155
       ]
     ],
     "translation": "Board löschen"
@@ -4021,7 +4116,7 @@
     "origin": [
       [
         "src/views/board/components/BoardDropdown.tsx",
-        149
+        155
       ]
     ],
     "translation": "Vorlage löschen"
@@ -4065,7 +4160,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        140
+        142
       ]
     ],
     "translation": "hat eine Checkliste gelöscht"
@@ -4077,7 +4172,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        145
+        147
       ]
     ],
     "translation": "hat ein Checklisten-Element gelöscht"
@@ -4093,7 +4188,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        233
+        245
       ]
     ],
     "translation": "hat Checkliste <0>{0}</0> gelöscht"
@@ -4109,7 +4204,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        276
+        288
       ]
     ],
     "translation": "hat Checklisten-Element <0>{0}</0> gelöscht"
@@ -4497,7 +4592,7 @@
     "origin": [
       [
         "src/views/board/components/BoardDropdown.tsx",
-        109
+        110
       ],
       [
         "src/views/board/components/UpdateBoardSlugForm.tsx",
@@ -5621,7 +5716,7 @@
     "origin": [
       [
         "src/views/board/index.tsx",
-        1006
+        1013
       ]
     ],
     "translation": "Legen Sie los, indem Sie eine neue Liste erstellen"
@@ -5911,7 +6006,6 @@
     "translation": ""
   },
   "VMlRqi": {
-    "translation": "",
     "message": "Hide details",
     "placeholders": {},
     "comments": [],
@@ -5920,7 +6014,8 @@
         "src/views/card/index.tsx",
         533
       ]
-    ]
+    ],
+    "translation": ""
   },
   "yx/fMc": {
     "message": "High",
@@ -6438,6 +6533,38 @@
     ],
     "translation": "Das Einladen von Mitgliedern erfordert einen Team-Plan. Sie werden zur Upgrade-Seite Ihres Arbeitsbereichs weitergeleitet."
   },
+  "8PTfgu": {
+    "translation": "",
+    "message": "It's back in {listName}.",
+    "placeholders": {
+      "listName": [
+        "listName"
+      ]
+    },
+    "comments": [],
+    "origin": [
+      [
+        "src/views/board/components/ArchivedCards.tsx",
+        40
+      ]
+    ]
+  },
+  "Vsgpq7": {
+    "translation": "",
+    "message": "Its list no longer exists, so it was added to {listName}.",
+    "placeholders": {
+      "listName": [
+        "listName"
+      ]
+    },
+    "comments": [],
+    "origin": [
+      [
+        "src/views/board/components/ArchivedCards.tsx",
+        39
+      ]
+    ]
+  },
   "c9AJhn": {
     "message": "Join workspace",
     "placeholders": {},
@@ -6737,7 +6864,7 @@
     "origin": [
       [
         "src/views/board/index.tsx",
-        436
+        437
       ],
       [
         "src/views/card/components/Dropdown.tsx",
@@ -6818,6 +6945,18 @@
     ],
     "translation": "Listen"
   },
+  "yQ2kGp": {
+    "translation": "",
+    "message": "Load more",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/views/board/components/ArchivedCards.tsx",
+        142
+      ]
+    ]
+  },
   "1rVAfU": {
     "message": "Load more activities",
     "placeholders": {},
@@ -6825,22 +6964,22 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        713
+        727
       ]
     ],
     "translation": "Weitere Aktivitäten laden"
   },
   "6YelOC": {
-    "translation": "",
     "message": "Load more comments",
     "placeholders": {},
     "comments": [],
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        712
+        726
       ]
-    ]
+    ],
+    "translation": ""
   },
   "0qyZ4b": {
     "message": "Loading permissions...",
@@ -6861,7 +7000,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        710
+        724
       ]
     ],
     "translation": "Wird geladen ..."
@@ -6957,7 +7096,7 @@
     "origin": [
       [
         "src/views/board/components/BoardDropdown.tsx",
-        98
+        99
       ]
     ],
     "translation": "Vorlage erstellen"
@@ -6985,7 +7124,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        144
+        146
       ]
     ],
     "translation": "hat ein Checklistenelement als unvollständig markiert"
@@ -7001,7 +7140,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        267
+        279
       ]
     ],
     "translation": "hat Checklistenelement <0>{0}</0> als unvollständig markiert"
@@ -7065,11 +7204,11 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        59
+        61
       ],
       [
         "src/views/card/components/ActivityList.tsx",
-        94
+        96
       ],
       [
         "src/views/members/index.tsx",
@@ -7273,7 +7412,7 @@
     "origin": [
       [
         "src/views/board/components/BoardDropdown.tsx",
-        129
+        135
       ]
     ],
     "translation": "In Workspace verschieben"
@@ -7292,7 +7431,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        169
+        173
       ]
     ],
     "translation": "hat die Karte von <0>{0}</0> nach <1>{1}</1> verschoben"
@@ -7304,7 +7443,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        133
+        135
       ]
     ],
     "translation": "hat die Karte in eine andere Liste verschoben"
@@ -7488,7 +7627,7 @@
       ],
       [
         "src/views/board/index.tsx",
-        951
+        958
       ]
     ],
     "translation": "Neue Liste"
@@ -7645,6 +7784,18 @@
     ],
     "translation": "Keine archivierten Boards"
   },
+  "piwvj1": {
+    "translation": "",
+    "message": "No archived cards.",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/views/board/components/ArchivedCards.tsx",
+        83
+      ]
+    ]
+  },
   "Eg99Sc": {
     "message": "No authentication methods are currently available",
     "placeholders": {},
@@ -7682,16 +7833,16 @@
     "translation": "Keine fälligen Karten"
   },
   "Q8eIK/": {
-    "translation": "",
     "message": "No comments yet.",
     "placeholders": {},
     "comments": [],
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        699
+        713
       ]
-    ]
+    ],
+    "translation": ""
   },
   "OpNhRn": {
     "message": "No credit card required",
@@ -7760,7 +7911,7 @@
     "origin": [
       [
         "src/views/board/index.tsx",
-        1002
+        1009
       ]
     ],
     "translation": "Keine Listen"
@@ -7772,7 +7923,7 @@
     "origin": [
       [
         "src/views/board/index.tsx",
-        1007
+        1014
       ]
     ],
     "translation": "Es wurden noch keine Listen erstellt"
@@ -8531,8 +8682,12 @@
         110
       ],
       [
+        "src/views/board/components/ArchivedCards.tsx",
+        54
+      ],
+      [
         "src/views/board/components/BoardDropdown.tsx",
-        72
+        73
       ],
       [
         "src/views/board/components/NewCardForm.tsx",
@@ -8560,15 +8715,15 @@
       ],
       [
         "src/views/board/index.tsx",
-        290
+        291
       ],
       [
         "src/views/board/index.tsx",
-        346
+        347
       ],
       [
         "src/views/board/index.tsx",
-        383
+        384
       ],
       [
         "src/views/boards/components/ImportBoardsForm.tsx",
@@ -8756,7 +8911,7 @@
       ],
       [
         "src/views/board/index.tsx",
-        445
+        446
       ],
       [
         "src/views/card/components/Dropdown.tsx",
@@ -9096,7 +9251,7 @@
     "origin": [
       [
         "src/views/board/components/BoardDropdown.tsx",
-        138
+        144
       ]
     ],
     "translation": "Aus Favoriten entfernen"
@@ -9127,7 +9282,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        122
+        124
       ]
     ],
     "translation": "hat {0} Labels entfernt: <0>{labelList}</0>"
@@ -9139,7 +9294,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        135
+        137
       ]
     ],
     "translation": "hat ein Label von der Karte entfernt"
@@ -9151,7 +9306,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        137
+        139
       ]
     ],
     "translation": "hat ein Mitglied von der Karte entfernt"
@@ -9163,7 +9318,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        147
+        149
       ]
     ],
     "translation": "hat einen Anhang entfernt"
@@ -9179,7 +9334,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        297
+        309
       ]
     ],
     "translation": "hat einen Anhang entfernt <0>{0}</0>"
@@ -9191,7 +9346,7 @@
     "origin": [
       [
         "src/views/board/components/BoardDropdown.tsx",
-        61
+        62
       ]
     ],
     "translation": "Aus Favoriten entfernt"
@@ -9207,7 +9362,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        209
+        221
       ]
     ],
     "translation": "hat Label entfernt <0>{0}</0>"
@@ -9219,11 +9374,11 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        150
+        152
       ],
       [
         "src/views/card/components/ActivityList.tsx",
-        333
+        345
       ]
     ],
     "translation": "hat das Fälligkeitsdatum entfernt"
@@ -9235,7 +9390,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        153
+        155
       ]
     ],
     "translation": ""
@@ -9247,7 +9402,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        139
+        141
       ]
     ],
     "translation": "hat eine Checkliste umbenannt"
@@ -9263,7 +9418,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        225
+        237
       ]
     ],
     "translation": "hat Checkliste umbenannt <0>{0}</0>"
@@ -9279,7 +9434,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        249
+        261
       ]
     ],
     "translation": "hat Checklistenelement umbenannt in <0>{0}</0>"
@@ -9347,6 +9502,62 @@
       ]
     ],
     "translation": "Ressourcen"
+  },
+  "yKu/3Y": {
+    "translation": "",
+    "message": "Restore",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/views/board/components/ArchivedCards.tsx",
+        127
+      ]
+    ]
+  },
+  "jHVALe": {
+    "translation": "",
+    "message": "Restore {0}",
+    "placeholders": {
+      "0": [
+        "card.title"
+      ]
+    },
+    "comments": [],
+    "origin": [
+      [
+        "src/views/board/components/ArchivedCards.tsx",
+        121
+      ]
+    ]
+  },
+  "NTE3cf": {
+    "translation": "",
+    "message": "restored the card",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/views/card/components/ActivityList.tsx",
+        157
+      ]
+    ]
+  },
+  "bAwW7i": {
+    "translation": "",
+    "message": "restored the card to <0>{0}</0>",
+    "placeholders": {
+      "0": [
+        "truncate(toList)"
+      ]
+    },
+    "comments": [],
+    "origin": [
+      [
+        "src/views/card/components/ActivityList.tsx",
+        183
+      ]
+    ]
   },
   "5k0NLb": {
     "message": "Review",
@@ -9743,7 +9954,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        178
+        190
       ]
     ],
     "translation": "hat sich die Karte selbst zugewiesen"
@@ -9875,7 +10086,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        148
+        150
       ]
     ],
     "translation": "hat das Fälligkeitsdatum festgelegt"
@@ -9887,7 +10098,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        151
+        153
       ]
     ],
     "translation": ""
@@ -9903,7 +10114,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        339
+        351
       ]
     ],
     "translation": ""
@@ -10033,7 +10244,6 @@
     "translation": "Tastenkombinationen"
   },
   "BowKyI": {
-    "translation": "",
     "message": "Show details",
     "placeholders": {},
     "comments": [],
@@ -10042,7 +10252,8 @@
         "src/views/card/index.tsx",
         534
       ]
-    ]
+    ],
+    "translation": ""
   },
   "0XmVWH": {
     "message": "Show newest activity first",
@@ -10615,11 +10826,11 @@
     "origin": [
       [
         "src/views/board/index.tsx",
-        865
+        872
       ],
       [
         "src/views/board/index.tsx",
-        908
+        915
       ]
     ],
     "translation": "Vorlage"
@@ -10811,7 +11022,7 @@
     "origin": [
       [
         "src/views/board/components/BoardDropdown.tsx",
-        52
+        53
       ]
     ],
     "translation": "Das Board wurde archiviert."
@@ -10839,7 +11050,7 @@
     "origin": [
       [
         "src/views/board/components/BoardDropdown.tsx",
-        53
+        54
       ]
     ],
     "translation": "Das Board wurde wiederhergestellt."
@@ -11005,10 +11216,6 @@
         39
       ],
       [
-        "src/views/card/components/DeleteCardConfirmation.tsx",
-        78
-      ],
-      [
         "src/views/card/components/DeleteChecklistConfirmation.tsx",
         59
       ],
@@ -11034,6 +11241,18 @@
       ]
     ],
     "translation": "Dieser API-Schlüssel wird nur einmal angezeigt. Bitte speichern Sie ihn an einem sicheren Ort."
+  },
+  "pPIDqz": {
+    "translation": "",
+    "message": "This board has no lists. Add a list, then restore the card.",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/views/board/components/ArchivedCards.tsx",
+        53
+      ]
+    ]
   },
   "l4asa1": {
     "message": "This board is private or does not exist",
@@ -11446,7 +11665,7 @@
     "origin": [
       [
         "src/views/board/index.tsx",
-        443
+        444
       ],
       [
         "src/views/card/components/Dropdown.tsx",
@@ -11703,6 +11922,18 @@
     ],
     "translation": "Berechtigungen konnten nicht zurückgesetzt werden"
   },
+  "8tfe4t": {
+    "translation": "",
+    "message": "Unable to restore card",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/views/board/components/ArchivedCards.tsx",
+        50
+      ]
+    ]
+  },
   "A8jqN7": {
     "message": "Unable to send feedback",
     "placeholders": {},
@@ -11750,7 +11981,7 @@
     "origin": [
       [
         "src/views/board/components/BoardDropdown.tsx",
-        71
+        72
       ]
     ],
     "translation": "Board konnte nicht aktualisiert werden"
@@ -11786,7 +12017,7 @@
     "origin": [
       [
         "src/views/board/index.tsx",
-        345
+        346
       ],
       [
         "src/views/card/index.tsx",
@@ -11838,7 +12069,7 @@
     "origin": [
       [
         "src/views/board/index.tsx",
-        382
+        383
       ],
       [
         "src/views/card/components/DueDateSelector.tsx",
@@ -11866,7 +12097,7 @@
     "origin": [
       [
         "src/views/board/index.tsx",
-        289
+        290
       ],
       [
         "src/views/card/components/ListSelector.tsx",
@@ -11946,7 +12177,7 @@
     "origin": [
       [
         "src/views/board/components/BoardDropdown.tsx",
-        118
+        124
       ]
     ],
     "translation": "Board wiederherstellen"
@@ -11962,7 +12193,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        192
+        204
       ]
     ],
     "translation": "hat <0>{0}</0> von der Karte entfernt"
@@ -11974,7 +12205,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        189
+        201
       ]
     ],
     "translation": "hat sich selbst von der Karte entfernt"
@@ -12210,7 +12441,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        142
+        144
       ]
     ],
     "translation": "hat ein Checklisten-Element aktualisiert"
@@ -12222,7 +12453,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        132
+        134
       ]
     ],
     "translation": "hat die Beschreibung aktualisiert"
@@ -12234,7 +12465,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        149
+        151
       ]
     ],
     "translation": "hat das Fälligkeitsdatum aktualisiert"
@@ -12246,7 +12477,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        152
+        154
       ]
     ],
     "translation": ""
@@ -12258,7 +12489,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        131
+        133
       ]
     ],
     "translation": "hat den Titel aktualisiert"
@@ -12274,7 +12505,7 @@
     "origin": [
       [
         "src/views/card/components/ActivityList.tsx",
-        161
+        165
       ]
     ],
     "translation": "hat den Titel zu <0>{0}</0> aktualisiert"
@@ -12838,7 +13069,7 @@
       ],
       [
         "src/views/board/index.tsx",
-        865
+        872
       ],
       [
         "src/views/boards/index.tsx",
@@ -13191,6 +13422,18 @@
     ],
     "translation": "Sie können Teammitglieder einladen, indem Sie auf die Schaltfläche \"Einladen\" in der oberen rechten Ecke der <0>Mitgliederseite</0> klicken und deren E-Mail-Adresse eingeben. Sie erhalten eine E-Mail mit einem Link, um dem Workspace beizutreten."
   },
+  "YlMjbh": {
+    "translation": "",
+    "message": "You can restore it later from Archived cards in the board menu.",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/views/card/components/DeleteCardConfirmation.tsx",
+        78
+      ]
+    ]
+  },
   "vAj6xG": {
     "message": "You can self-host by following the instructions in our <0>repo</0>.",
     "placeholders": {},
@@ -13230,11 +13473,11 @@
       ],
       [
         "src/views/board/index.tsx",
-        939
+        946
       ],
       [
         "src/views/board/index.tsx",
-        1013
+        1020
       ],
       [
         "src/views/boards/components/BoardsList.tsx",

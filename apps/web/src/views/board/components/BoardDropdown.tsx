@@ -4,6 +4,7 @@ import {
   HiArrowRightOnRectangle,
   HiEllipsisHorizontal,
   HiLink,
+  HiOutlineArchiveBox,
   HiOutlineDocumentDuplicate,
   HiOutlineStar,
   HiOutlineTrash,
@@ -112,6 +113,11 @@ export default function BoardDropdown({
           },
         ]
       : []),
+    {
+      label: t`Archived cards`,
+      action: () => openModal("ARCHIVED_CARDS"),
+      icon: <HiOutlineArchiveBox className="h-[16px] w-[16px] text-dark-900" />,
+    },
     ...(!isTemplate && canArchiveBoard
       ? [
           {

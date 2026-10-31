@@ -54,6 +54,7 @@ export const activityTypes = [
   "card.updated.priority.updated",
   "card.updated.priority.removed",
   "card.archived",
+  "card.unarchived",
 ] as const;
 
 export type ActivityType = (typeof activityTypes)[number];

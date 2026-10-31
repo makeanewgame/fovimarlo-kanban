@@ -4,6 +4,8 @@ import { Trans } from "@lingui/react/macro";
 import { format, formatDistanceToNow, isSameYear } from "date-fns";
 import { useEffect, useRef, useState } from "react";
 import {
+  HiOutlineArchiveBox,
+  HiOutlineArchiveBoxXMark,
   HiOutlineArrowLeft,
   HiOutlineArrowRight,
   HiOutlineCheckCircle,
@@ -151,6 +153,8 @@ const getActivityText = ({
     "card.updated.priority.added": t`set the priority`,
     "card.updated.priority.updated": t`updated the priority`,
     "card.updated.priority.removed": t`removed the priority`,
+    "card.archived": t`archived the card`,
+    "card.unarchived": t`restored the card`,
   } as const;
 
   if (!(type in ACTIVITY_TYPE_MAP)) return null;
@@ -170,6 +174,14 @@ const getActivityText = ({
         moved the card from <TextHighlight>{truncate(fromList)}</TextHighlight>{" "}
         to
         <TextHighlight>{truncate(toList)}</TextHighlight>
+      </Trans>
+    );
+  }
+
+  if (type === "card.unarchived" && toList) {
+    return (
+      <Trans>
+        restored the card to <TextHighlight>{truncate(toList)}</TextHighlight>
       </Trans>
     );
   }
@@ -379,6 +391,8 @@ const ACTIVITY_ICON_MAP: Partial<Record<ActivityType, React.ReactNode | null>> =
     "card.updated.priority.added": <HiOutlineFlag />,
     "card.updated.priority.updated": <HiOutlineFlag />,
     "card.updated.priority.removed": <HiOutlineFlag />,
+    "card.archived": <HiOutlineArchiveBox />,
+    "card.unarchived": <HiOutlineArchiveBoxXMark />,
   } as const;
 
 const getActivityIcon = (

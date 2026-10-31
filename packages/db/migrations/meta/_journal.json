@@ -267,6 +267,13 @@
       "when": 1793444137496,
       "tag": "20261031105537_AddPages",
       "breakpoints": true
+    },
+    {
+      "idx": 38,
+      "version": "7",
+      "when": 1793446834935,
+      "tag": "20261031114034_AddCardUnarchivedActivity",
+      "breakpoints": true
     }
   ]
 }

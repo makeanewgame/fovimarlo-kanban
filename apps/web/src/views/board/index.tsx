@@ -57,6 +57,7 @@ import { useWorkspace } from "~/providers/workspace";
 import { api } from "~/utils/api";
 import { formatToArray, isPlaceholderPublicId } from "~/utils/helpers";
 import { DeleteCardConfirmation } from "~/views/card/components/DeleteCardConfirmation";
+import { ArchivedCards } from "./components/ArchivedCards";
 import BoardDropdown from "./components/BoardDropdown";
 import BoardSwitcher from "./components/BoardSwitcher";
 import CalendarView from "./components/CalendarView";
@@ -718,6 +719,12 @@ export default function BoardPage({ isTemplate }: { isTemplate?: boolean }) {
           />
         </Modal>
 
+        <Modal
+          modalSize="md"
+          isVisible={isOpen && modalContentType === "ARCHIVED_CARDS"}
+        >
+          <ArchivedCards boardPublicId={boardId ?? ""} />
+        </Modal>
         <Modal
           modalSize="md"
           isVisible={isOpen && modalContentType === "NEW_CARD"}

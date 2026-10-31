@@ -44,7 +44,7 @@ export function DeleteListConfirmation({
           Are you sure you want to delete this list?
         </h2>
         <p className="text-sm font-medium text-light-900 dark:text-dark-900">
-          {"This action can't be undone."}
+          {"The list can't be restored, but its cards stay in Archived cards."}
         </p>
       </div>
       <div className="mt-5 flex justify-end space-x-2 sm:mt-6">
