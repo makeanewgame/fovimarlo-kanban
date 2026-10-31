@@ -123,7 +123,7 @@
     "origin": [
       [
         "src/views/board/index.tsx",
-        892
+        899
       ]
     ],
     "translation": "{0} nie znaleziono"
@@ -161,7 +161,6 @@
     "translation": "{projectCount, plural, one {Importuj projekt (1)} few {Importuj projekty ({projectCount})} many {Importuj projektów ({projectCount})} other {Importuj projekty ({projectCount})}}"
   },
   "5v6gsP": {
-    "translation": "",
     "message": "{subPageCount, plural, one {Its # sub-page will be deleted too. This action can't be undone.} other {Its # sub-pages will be deleted too. This action can't be undone.}}",
     "placeholders": {
       "subPageCount": [
@@ -174,7 +173,8 @@
         "src/views/pages/components/DeletePageConfirmation.tsx",
         35
       ]
-    ]
+    ],
+    "translation": ""
   },
   "h/eDNV": {
     "message": "+ {overflowCount} more",
@@ -477,7 +477,6 @@
     "translation": "Dodaj kartę"
   },
   "Wsa7xo": {
-    "translation": "",
     "message": "Add a page inside {title}",
     "placeholders": {
       "title": [
@@ -490,7 +489,8 @@
         "src/views/pages/components/PageTree.tsx",
         83
       ]
-    ]
+    ],
+    "translation": ""
   },
   "qtE5nt": {
     "message": "Add an item...",
@@ -549,7 +549,6 @@
     "translation": "Dodaj element listy kontrolnej"
   },
   "AgvHni": {
-    "translation": "",
     "message": "Add column",
     "placeholders": {},
     "comments": [],
@@ -558,7 +557,8 @@
         "src/components/Editor.tsx",
         742
       ]
-    ]
+    ],
+    "translation": ""
   },
   "ngBZOd": {
     "message": "Add comment... (type '/' to open commands or '@' to mention)",
@@ -633,7 +633,6 @@
     "translation": "Dodaj członka"
   },
   "qZd/ph": {
-    "translation": "",
     "message": "Add row",
     "placeholders": {},
     "comments": [],
@@ -642,10 +641,10 @@
         "src/components/Editor.tsx",
         737
       ]
-    ]
+    ],
+    "translation": ""
   },
   "i/JrHT": {
-    "translation": "",
     "message": "Add sub-page",
     "placeholders": {},
     "comments": [],
@@ -654,7 +653,8 @@
         "src/views/pages/components/PageTree.tsx",
         84
       ]
-    ]
+    ],
+    "translation": ""
   },
   "pBsoKL": {
     "message": "Add to favorites",
@@ -1243,7 +1243,6 @@
     "translation": "Czy na pewno chcesz usunąć {entityLabel}?"
   },
   "R6gr8f": {
-    "translation": "",
     "message": "Are you sure you want to delete \"{pageTitle}\"?",
     "placeholders": {
       "pageTitle": [
@@ -1256,7 +1255,8 @@
         "src/views/pages/components/DeletePageConfirmation.tsx",
         31
       ]
-    ]
+    ],
+    "translation": ""
   },
   "Ypy5pZ": {
     "message": "Are you sure you want to delete the webhook \"{webhookName}\"? This action cannot be undone.",
@@ -1621,7 +1621,7 @@
     "origin": [
       [
         "src/views/board/index.tsx",
-        864
+        865
       ],
       [
         "src/views/card/index.tsx",
@@ -1665,7 +1665,7 @@
     "origin": [
       [
         "src/views/board/index.tsx",
-        882
+        888
       ]
     ],
     "translation": "Nazwa tablicy"
@@ -1983,7 +1983,6 @@
     "translation": "Może tworzyć listy"
   },
   "olxvPy": {
-    "translation": "",
     "message": "Can create pages",
     "placeholders": {},
     "comments": [],
@@ -1996,7 +1995,8 @@
         "src/views/settings/components/RolePermissions.tsx",
         54
       ]
-    ]
+    ],
+    "translation": ""
   },
   "pXVFJy": {
     "message": "Can delete boards",
@@ -2063,7 +2063,6 @@
     "translation": "Może usuwać listy"
   },
   "XRKSEl": {
-    "translation": "",
     "message": "Can delete pages",
     "placeholders": {},
     "comments": [],
@@ -2076,7 +2075,8 @@
         "src/views/settings/components/RolePermissions.tsx",
         56
       ]
-    ]
+    ],
+    "translation": ""
   },
   "Cmudpi": {
     "message": "Can delete workspace",
@@ -2175,7 +2175,6 @@
     "translation": "Może edytować role i uprawnienia członków"
   },
   "jyZZov": {
-    "translation": "",
     "message": "Can edit pages",
     "placeholders": {},
     "comments": [],
@@ -2188,7 +2187,8 @@
         "src/views/settings/components/RolePermissions.tsx",
         55
       ]
-    ]
+    ],
+    "translation": ""
   },
   "iLbjv+": {
     "message": "Can edit workspace",
@@ -2335,7 +2335,6 @@
     "translation": "Może wyświetlać członków"
   },
   "GctxHM": {
-    "translation": "",
     "message": "Can view pages",
     "placeholders": {},
     "comments": [],
@@ -2348,7 +2347,8 @@
         "src/views/settings/components/RolePermissions.tsx",
         53
       ]
-    ]
+    ],
+    "translation": ""
   },
   "SNfg0e": {
     "message": "Can view workspace",
@@ -2545,7 +2545,7 @@
     "origin": [
       [
         "src/views/board/index.tsx",
-        437
+        438
       ],
       [
         "src/views/card/components/Dropdown.tsx",
@@ -2887,7 +2887,6 @@
     "translation": "Współpraca"
   },
   "M0p8YE": {
-    "translation": "",
     "message": "Collapse {title}",
     "placeholders": {
       "title": [
@@ -2900,7 +2899,8 @@
         "src/views/pages/components/PageTree.tsx",
         58
       ]
-    ]
+    ],
+    "translation": ""
   },
   "AUYALh": {
     "message": "Coming soon",
@@ -3331,7 +3331,6 @@
     "translation": "Funkcje podstawowe"
   },
   "YVvRw1": {
-    "translation": "",
     "message": "Couldn't save.",
     "placeholders": {},
     "comments": [],
@@ -3340,7 +3339,8 @@
         "src/views/pages/components/PageEditor.tsx",
         36
       ]
-    ]
+    ],
+    "translation": ""
   },
   "b9XOHo": {
     "message": "Create {0}",
@@ -3505,11 +3505,11 @@
     "origin": [
       [
         "src/views/board/index.tsx",
-        138
+        139
       ],
       [
         "src/views/board/index.tsx",
-        1017
+        1024
       ]
     ],
     "translation": "Utwórz nową listę"
@@ -3555,16 +3555,16 @@
     "translation": "Utwórz workspace"
   },
   "ssaQaB": {
-    "translation": "",
     "message": "Create your first page to keep briefs, notes and checklists next to your boards.",
     "placeholders": {},
     "comments": [],
     "origin": [
       [
         "src/views/pages/index.tsx",
-        147
+        150
       ]
-    ]
+    ],
+    "translation": ""
   },
   "d+F6q9": {
     "message": "Created",
@@ -3621,6 +3621,18 @@
       ]
     ],
     "translation": "Przytnij swój avatar"
+  },
+  "iuk1ab": {
+    "translation": "",
+    "message": "Current board",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/views/board/components/BoardSwitcher.tsx",
+        78
+      ]
+    ]
   },
   "MtNNDo": {
     "message": "Current list",
@@ -3843,7 +3855,6 @@
     "translation": "Usuń"
   },
   "ShjfSO": {
-    "translation": "",
     "message": "Delete {title}",
     "placeholders": {
       "title": [
@@ -3856,7 +3867,8 @@
         "src/views/pages/components/PageTree.tsx",
         94
       ]
-    ]
+    ],
+    "translation": ""
   },
   "ZDGm40": {
     "message": "Delete account",
@@ -3919,7 +3931,6 @@
     "translation": "Usuń listę kontrolną"
   },
   "GAohqx": {
-    "translation": "",
     "message": "Delete column",
     "placeholders": {},
     "comments": [],
@@ -3928,7 +3939,8 @@
         "src/components/Editor.tsx",
         752
       ]
-    ]
+    ],
+    "translation": ""
   },
   "njJFtc": {
     "message": "Delete comment",
@@ -3955,7 +3967,6 @@
     "translation": "Usuń listę"
   },
   "O1M1zi": {
-    "translation": "",
     "message": "Delete page",
     "placeholders": {},
     "comments": [],
@@ -3964,10 +3975,10 @@
         "src/views/pages/components/PageTree.tsx",
         95
       ]
-    ]
+    ],
+    "translation": ""
   },
   "0cspe/": {
-    "translation": "",
     "message": "Delete row",
     "placeholders": {},
     "comments": [],
@@ -3976,10 +3987,10 @@
         "src/components/Editor.tsx",
         747
       ]
-    ]
+    ],
+    "translation": ""
   },
   "HSI88F": {
-    "translation": "",
     "message": "Delete table",
     "placeholders": {},
     "comments": [],
@@ -3988,7 +3999,8 @@
         "src/components/Editor.tsx",
         757
       ]
-    ]
+    ],
+    "translation": ""
   },
   "DFjdv0": {
     "message": "Delete template",
@@ -5063,7 +5075,6 @@
     "translation": "Wykonanie"
   },
   "92/Z2+": {
-    "translation": "",
     "message": "Expand {title}",
     "placeholders": {
       "title": [
@@ -5076,7 +5087,8 @@
         "src/views/pages/components/PageTree.tsx",
         58
       ]
-    ]
+    ],
+    "translation": ""
   },
   "GwNIE2": {
     "message": "Extended Roadmap",
@@ -5597,7 +5609,7 @@
     "origin": [
       [
         "src/views/board/index.tsx",
-        999
+        1006
       ]
     ],
     "translation": "Rozpocznij, tworząc nową listę"
@@ -5759,7 +5771,6 @@
     "translation": "Przejdź do członków"
   },
   "4fVLnQ": {
-    "translation": "",
     "message": "Go to pages",
     "placeholders": {},
     "comments": [],
@@ -5768,7 +5779,8 @@
         "src/components/SideNavigation.tsx",
         122
       ]
-    ]
+    ],
+    "translation": ""
   },
   "1WuwiM": {
     "message": "Go to settings",
@@ -6571,7 +6583,6 @@
     "translation": "Duży"
   },
   "QEU41f": {
-    "translation": "",
     "message": "Last updated {0}",
     "placeholders": {
       "0": [
@@ -6584,7 +6595,8 @@
         "src/views/pages/components/PageEditor.tsx",
         137
       ]
-    ]
+    ],
+    "translation": ""
   },
   "sDuhfK": {
     "message": "Launch offer: unlimited seats for just $29/month with Pro",
@@ -6701,7 +6713,7 @@
     "origin": [
       [
         "src/views/board/index.tsx",
-        435
+        436
       ],
       [
         "src/views/card/components/Dropdown.tsx",
@@ -7440,13 +7452,12 @@
       ],
       [
         "src/views/board/index.tsx",
-        944
+        951
       ]
     ],
     "translation": "Nowa lista"
   },
   "fos4db": {
-    "translation": "",
     "message": "New page",
     "placeholders": {},
     "comments": [],
@@ -7459,7 +7470,8 @@
         "src/views/pages/index.tsx",
         108
       ]
-    ]
+    ],
+    "translation": ""
   },
   "+MdEsf": {
     "message": "New password is required",
@@ -7700,7 +7712,7 @@
     "origin": [
       [
         "src/views/board/index.tsx",
-        995
+        1002
       ]
     ],
     "translation": "Brak list"
@@ -7712,13 +7724,12 @@
     "origin": [
       [
         "src/views/board/index.tsx",
-        1000
+        1007
       ]
     ],
     "translation": "Nie utworzono jeszcze żadnych list"
   },
   "LkvLQe": {
-    "translation": "",
     "message": "No pages yet.",
     "placeholders": {},
     "comments": [],
@@ -7727,7 +7738,8 @@
         "src/views/pages/index.tsx",
         131
       ]
-    ]
+    ],
+    "translation": ""
   },
   "i30J2U": {
     "message": "No projects found",
@@ -8002,7 +8014,6 @@
     "translation": "Strona nie znaleziona"
   },
   "ZfAT4u": {
-    "translation": "",
     "message": "Page title",
     "placeholders": {},
     "comments": [],
@@ -8011,10 +8022,10 @@
         "src/views/pages/components/PageEditor.tsx",
         120
       ]
-    ]
+    ],
+    "translation": ""
   },
   "wRR604": {
-    "translation": "",
     "message": "Pages",
     "placeholders": {},
     "comments": [],
@@ -8029,16 +8040,16 @@
       ],
       [
         "src/views/pages/components/PageEditor.tsx",
-        201
+        199
       ],
       [
         "src/views/pages/index.tsx",
         97
       ]
-    ]
+    ],
+    "translation": ""
   },
   "ySJgqE": {
-    "translation": "",
     "message": "Pages | {0}",
     "placeholders": {
       "0": [
@@ -8051,7 +8062,8 @@
         "src/views/pages/index.tsx",
         87
       ]
-    ]
+    ],
+    "translation": ""
   },
   "Uworke": {
     "message": "Part-time",
@@ -8500,15 +8512,15 @@
       ],
       [
         "src/views/board/index.tsx",
-        289
+        290
       ],
       [
         "src/views/board/index.tsx",
-        345
+        346
       ],
       [
         "src/views/board/index.tsx",
-        382
+        383
       ],
       [
         "src/views/boards/components/ImportBoardsForm.tsx",
@@ -8696,7 +8708,7 @@
       ],
       [
         "src/views/board/index.tsx",
-        444
+        445
       ],
       [
         "src/views/card/components/Dropdown.tsx",
@@ -8982,7 +8994,6 @@
     "translation": "Odrzucono"
   },
   "HpK/8d": {
-    "translation": "",
     "message": "Reload",
     "placeholders": {},
     "comments": [],
@@ -8991,7 +9002,8 @@
         "src/views/pages/components/PageEditor.tsx",
         109
       ]
-    ]
+    ],
+    "translation": ""
   },
   "qlAIQ1": {
     "message": "Remote",
@@ -9429,7 +9441,6 @@
     "translation": "Oszczędzaj czas dzięki szablonom tablic do wielokrotnego użytku."
   },
   "idD8Ev": {
-    "translation": "",
     "message": "Saved",
     "placeholders": {},
     "comments": [],
@@ -9438,10 +9449,10 @@
         "src/views/pages/components/PageEditor.tsx",
         32
       ]
-    ]
+    ],
+    "translation": ""
   },
   "XvjC4F": {
-    "translation": "",
     "message": "Saving...",
     "placeholders": {},
     "comments": [],
@@ -9450,7 +9461,8 @@
         "src/views/pages/components/PageEditor.tsx",
         31
       ]
-    ]
+    ],
+    "translation": ""
   },
   "cOh+MI": {
     "message": "Screening",
@@ -9589,16 +9601,16 @@
     "translation": "Wybierz listę"
   },
   "UmhUBg": {
-    "translation": "",
     "message": "Select a page to start reading.",
     "placeholders": {},
     "comments": [],
     "origin": [
       [
         "src/views/pages/index.tsx",
-        146
+        149
       ]
-    ]
+    ],
+    "translation": ""
   },
   "NM2hyD": {
     "message": "Select a workspace",
@@ -10229,7 +10241,6 @@
     "translation": "Nie udało się przesłać niektórych załączników"
   },
   "z+46j+": {
-    "translation": "",
     "message": "Someone else changed this page. Your latest edits aren't saved. Copy them if you need them, then reload.",
     "placeholders": {},
     "comments": [],
@@ -10238,7 +10249,8 @@
         "src/views/pages/components/PageEditor.tsx",
         106
       ]
-    ]
+    ],
+    "translation": ""
   },
   "J9+zIR": {
     "message": "Something went wrong during activation. Please try again.",
@@ -10436,6 +10448,30 @@
     ],
     "translation": "Wesprzyj rozwój projektu"
   },
+  "+dqFBY": {
+    "translation": "",
+    "message": "Switch board",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/views/board/components/BoardSwitcher.tsx",
+        38
+      ]
+    ]
+  },
+  "x4VQgP": {
+    "translation": "",
+    "message": "Switch template",
+    "placeholders": {},
+    "comments": [],
+    "origin": [
+      [
+        "src/views/board/components/BoardSwitcher.tsx",
+        38
+      ]
+    ]
+  },
   "D+NlUC": {
     "message": "System",
     "placeholders": {},
@@ -10449,7 +10485,6 @@
     "translation": "System"
   },
   "4hJhzz": {
-    "translation": "",
     "message": "Table",
     "placeholders": {},
     "comments": [],
@@ -10458,7 +10493,8 @@
         "src/components/Editor.tsx",
         454
       ]
-    ]
+    ],
+    "translation": ""
   },
   "KM6m8p": {
     "message": "Team",
@@ -10519,11 +10555,11 @@
     "origin": [
       [
         "src/views/board/index.tsx",
-        864
+        865
       ],
       [
         "src/views/board/index.tsx",
-        901
+        908
       ]
     ],
     "translation": "Szablon"
@@ -10988,16 +11024,16 @@
     "translation": "Uprawnienia tego członka zostały zresetowane do domyślnych dla jego roli."
   },
   "6T6uGy": {
-    "translation": "",
     "message": "This page doesn't exist or was deleted.",
     "placeholders": {},
     "comments": [],
     "origin": [
       [
         "src/views/pages/components/PageEditor.tsx",
-        211
+        209
       ]
-    ]
+    ],
+    "translation": ""
   },
   "HQVm6e": {
     "message": "This URL has already been taken",
@@ -11272,7 +11308,6 @@
     "translation": "Zaufany przez dynamiczne zespoły<0/>na całym świecie"
   },
   "KDw4GX": {
-    "translation": "",
     "message": "Try again",
     "placeholders": {},
     "comments": [],
@@ -11281,7 +11316,8 @@
         "src/views/pages/components/PageEditor.tsx",
         38
       ]
-    ]
+    ],
+    "translation": ""
   },
   "bZSICm": {
     "message": "Unable to add checklist item",
@@ -11350,7 +11386,7 @@
     "origin": [
       [
         "src/views/board/index.tsx",
-        442
+        443
       ],
       [
         "src/views/card/components/Dropdown.tsx",
@@ -11404,7 +11440,6 @@
     "translation": "Nie można utworzyć listy"
   },
   "FB/Nlf": {
-    "translation": "",
     "message": "Unable to create page",
     "placeholders": {},
     "comments": [],
@@ -11413,7 +11448,8 @@
         "src/views/pages/index.tsx",
         52
       ]
-    ]
+    ],
+    "translation": ""
   },
   "YcyP2z": {
     "message": "Unable to create template",
@@ -11690,7 +11726,7 @@
     "origin": [
       [
         "src/views/board/index.tsx",
-        344
+        345
       ],
       [
         "src/views/card/index.tsx",
@@ -11742,7 +11778,7 @@
     "origin": [
       [
         "src/views/board/index.tsx",
-        381
+        382
       ],
       [
         "src/views/card/components/DueDateSelector.tsx",
@@ -11770,7 +11806,7 @@
     "origin": [
       [
         "src/views/board/index.tsx",
-        288
+        289
       ],
       [
         "src/views/card/components/ListSelector.tsx",
@@ -12044,7 +12080,6 @@
     "translation": "Nielimitowane miejsca"
   },
   "wja8aL": {
-    "translation": "",
     "message": "Untitled",
     "placeholders": {},
     "comments": [],
@@ -12065,7 +12100,8 @@
         "src/views/pages/index.tsx",
         67
       ]
-    ]
+    ],
+    "translation": ""
   },
   "EkH9pt": {
     "message": "Update",
@@ -12742,7 +12778,7 @@
       ],
       [
         "src/views/board/index.tsx",
-        864
+        865
       ],
       [
         "src/views/boards/index.tsx",
@@ -12996,16 +13032,16 @@
     "translation": "workspace-url"
   },
   "8ZDHwr": {
-    "translation": "",
     "message": "Write something... (type '/' for commands or '@' to mention)",
     "placeholders": {},
     "comments": [],
     "origin": [
       [
         "src/views/pages/components/PageEditor.tsx",
-        153
+        151
       ]
-    ]
+    ],
+    "translation": ""
   },
   "4kJRen": {
     "message": "Writing",
@@ -13134,11 +13170,11 @@
       ],
       [
         "src/views/board/index.tsx",
-        932
+        939
       ],
       [
         "src/views/board/index.tsx",
-        1006
+        1013
       ],
       [
         "src/views/boards/components/BoardsList.tsx",
@@ -13160,16 +13196,16 @@
     "translation": "Nie masz uprawnień"
   },
   "9fHIVY": {
-    "translation": "",
     "message": "You don't have permission to view this page.",
     "placeholders": {},
     "comments": [],
     "origin": [
       [
         "src/views/pages/components/PageEditor.tsx",
-        210
+        208
       ]
-    ]
+    ],
+    "translation": ""
   },
   "p/hk9N": {
     "message": "You have been logged in successfully.",

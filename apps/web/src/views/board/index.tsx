@@ -58,6 +58,7 @@ import { api } from "~/utils/api";
 import { formatToArray, isPlaceholderPublicId } from "~/utils/helpers";
 import { DeleteCardConfirmation } from "~/views/card/components/DeleteCardConfirmation";
 import BoardDropdown from "./components/BoardDropdown";
+import BoardSwitcher from "./components/BoardSwitcher";
 import CalendarView from "./components/CalendarView";
 import { CardContextDueDateModal } from "./components/CardContextDueDateModal";
 import { CardContextDuplicateModal } from "./components/CardContextDuplicateModal";
@@ -872,20 +873,26 @@ export default function BoardPage({ isTemplate }: { isTemplate?: boolean }) {
             </div>
           )}
           {boardData && (
-            <form
-              onSubmit={handleSubmit(onSubmit)}
-              className="order-2 focus-visible:outline-none md:order-1"
-            >
-              <input
-                id="name"
-                type="text"
-                aria-label={t`Board name`}
-                {...register("name")}
-                onBlur={canEditBoard ? handleSubmit(onSubmit) : undefined}
-                readOnly={!canEditBoard}
-                className="block border-0 bg-transparent p-0 py-0 font-bold leading-[2.3rem] tracking-tight text-neutral-900 focus:ring-0 focus-visible:outline-none disabled:cursor-not-allowed dark:text-dark-1000 sm:text-[1.2rem]"
+            <div className="order-2 flex min-w-0 items-center gap-1 md:order-1">
+              <BoardSwitcher
+                currentBoardPublicId={boardId ?? ""}
+                isTemplate={!!isTemplate}
               />
-            </form>
+              <form
+                onSubmit={handleSubmit(onSubmit)}
+                className="min-w-0 focus-visible:outline-none"
+              >
+                <input
+                  id="name"
+                  type="text"
+                  aria-label={t`Board name`}
+                  {...register("name")}
+                  onBlur={canEditBoard ? handleSubmit(onSubmit) : undefined}
+                  readOnly={!canEditBoard}
+                  className="block max-w-full border-0 bg-transparent p-0 py-0 font-bold leading-[2.3rem] tracking-tight text-neutral-900 focus:ring-0 focus-visible:outline-none disabled:cursor-not-allowed dark:text-dark-1000 sm:text-[1.2rem]"
+                />
+              </form>
+            </div>
           )}
           {!boardData && !isLoading && (
             <p className="order-2 block p-0 py-0 font-bold leading-[2.3rem] tracking-tight text-neutral-900 dark:text-dark-1000 sm:text-[1.2rem] md:order-1">
