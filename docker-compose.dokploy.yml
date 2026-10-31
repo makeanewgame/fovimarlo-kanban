@@ -1,0 +1,34 @@
+# Dokploy deployment that uses an existing Dokploy Postgres service.
+# Set POSTGRES_URL to that database's internal connection URL. Traffic reaches
+# the web service through a domain added in Dokploy, so no host ports are published.
+services:
+  migrate:
+    networks:
+      - dokploy-network
+    build:
+      context: .
+      dockerfile: ./apps/web/Dockerfile
+      target: migrate
+    environment:
+      - POSTGRES_URL=${POSTGRES_URL}
+    restart: "no"
+
+  web:
+    networks:
+      - dokploy-network
+    build:
+      context: .
+      dockerfile: ./apps/web/Dockerfile
+      target: web
+    # env_file only passes variables that are defined. Listing them under
+    # `environment` would send unset ones as "", which fails URL validation in env.ts.
+    env_file:
+      - .env
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+    restart: unless-stopped
+
+networks:
+  dokploy-network:
+    external: true
