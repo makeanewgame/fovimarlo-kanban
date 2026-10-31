@@ -274,6 +274,13 @@
       "when": 1793446834935,
       "tag": "20261031114034_AddCardUnarchivedActivity",
       "breakpoints": true
+    },
+    {
+      "idx": 39,
+      "version": "7",
+      "when": 1793448950156,
+      "tag": "20261031121550_AddClickupImportSource",
+      "breakpoints": true
     }
   ]
 }

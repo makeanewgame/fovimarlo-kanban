@@ -14,7 +14,11 @@ import { labels } from "./labels";
 import { lists } from "./lists";
 import { users } from "./users";
 
-export const importSourceEnum = pgEnum("source", ["trello", "github"]);
+export const importSourceEnum = pgEnum("source", [
+  "trello",
+  "github",
+  "clickup",
+]);
 export const importStatusEnum = pgEnum("status", [
   "started",
   "success",

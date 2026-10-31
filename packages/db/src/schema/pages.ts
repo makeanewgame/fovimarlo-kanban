@@ -12,6 +12,7 @@ import {
   varchar,
 } from "drizzle-orm/pg-core";
 
+import { imports } from "./imports";
 import { users } from "./users";
 import { workspaces } from "./workspaces";
 
@@ -43,6 +44,9 @@ export const pages = pgTable(
     deletedBy: uuid("deletedBy").references(() => users.id, {
       onDelete: "set null",
     }),
+    importId: bigint("importId", { mode: "number" }).references(
+      () => imports.id,
+    ),
   },
   (table) => [
     index("page_workspace_idx").on(table.workspaceId),
