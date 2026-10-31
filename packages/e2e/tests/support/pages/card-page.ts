@@ -105,7 +105,7 @@ export class CardPage {
 
   private activitySection() {
     return this.page
-      .getByRole("heading", { name: "Activity", exact: true })
+      .getByRole("heading", { name: "Comments and activity", exact: true })
       .locator("..")
       .locator("..");
   }

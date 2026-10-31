@@ -129,6 +129,7 @@ export const getPaginatedActivities = async (
       publicId?: string;
     };
     order?: "oldest" | "newest";
+    commentsOnly?: boolean;
   },
 ) => {
   const limit = options?.limit ?? 20;
@@ -199,6 +200,9 @@ export const getPaginatedActivities = async (
     where: and(
       eq(cardActivities.cardId, cardId),
       cursorCondition,
+      options?.commentsOnly
+        ? eq(cardActivities.type, "card.updated.comment.added")
+        : undefined,
       or(
         isNull(cardActivities.commentId),
         inArray(cardActivities.commentId, validCommentIds),

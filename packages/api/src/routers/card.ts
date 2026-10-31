@@ -816,6 +816,7 @@ export const cardRouter = createTRPCRouter({
         cursor: z.string().datetime().optional(), // ISO datetime string
         cursorPublicId: z.string().length(12).optional(),
         order: z.enum(["oldest", "newest"]).optional().default("oldest"),
+        commentsOnly: z.boolean().optional().default(false),
       }),
     )
     .output(
@@ -863,6 +864,7 @@ export const cardRouter = createTRPCRouter({
           limit: input.limit,
           cursor,
           order: input.order,
+          commentsOnly: input.commentsOnly,
         },
       );
 

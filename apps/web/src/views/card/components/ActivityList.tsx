@@ -499,12 +499,14 @@ const ActivityList = ({
   order,
   recentCommentPublicIds = [],
   isViewOnly,
+  commentsOnly = false,
 }: {
   cardPublicId: string;
   isLoading: boolean;
   order: ActivitySortOrder;
   recentCommentPublicIds?: string[];
   isViewOnly?: boolean;
+  commentsOnly?: boolean;
 }) => {
   const utils = api.useUtils();
   const [allActivities, setAllActivities] = useState<
@@ -529,6 +531,7 @@ const ActivityList = ({
       cardPublicId,
       limit: ACTIVITIES_PAGE_SIZE,
       order,
+      commentsOnly,
     },
     {
       enabled: !!cardPublicId && cardPublicId.length >= 12,
@@ -556,7 +559,7 @@ const ActivityList = ({
     setNextCursorPublicId(null);
     isFullyExpandedRef.current = false;
     lastDataUpdatedAtRef.current = null;
-  }, [cardPublicId, order]);
+  }, [cardPublicId, order, commentsOnly]);
 
   useEffect(() => {
     let cancelled = false;
@@ -581,6 +584,7 @@ const ActivityList = ({
               cursor: currentCursor,
               cursorPublicId: currentCursorPublicId,
               order,
+              commentsOnly,
             });
             if (cancelled) return;
 
@@ -624,6 +628,7 @@ const ActivityList = ({
     dataUpdatedAt,
     cardPublicId,
     order,
+    commentsOnly,
     utils.card.getActivities,
   ]);
 
@@ -638,6 +643,7 @@ const ActivityList = ({
         cursor: nextCursor,
         cursorPublicId: nextCursorPublicId,
         order,
+        commentsOnly,
       });
 
       const existingIds = new Set(allActivities.map((a) => a.publicId));
@@ -684,6 +690,15 @@ const ActivityList = ({
         isLoading={isLoading}
         isViewOnly={isViewOnly}
       />
+      {commentsOnly &&
+        !isLoading &&
+        !hasMore &&
+        allActivities.length === 0 &&
+        recentActivities.length === 0 && (
+          <p className="text-sm text-light-900 dark:text-dark-800">
+            {t`No comments yet.`}
+          </p>
+        )}
       {hasMore && (
         <div className="flex justify-center pt-4">
           <button
@@ -691,7 +706,11 @@ const ActivityList = ({
             disabled={isFetching}
             className="text-sm font-medium text-light-900 hover:text-light-1000 disabled:opacity-50 dark:text-dark-800 dark:hover:text-dark-1000"
           >
-            {isFetching ? t`Loading...` : t`Load more activities`}
+            {isFetching
+              ? t`Loading...`
+              : commentsOnly
+                ? t`Load more comments`
+                : t`Load more activities`}
           </button>
         </div>
       )}

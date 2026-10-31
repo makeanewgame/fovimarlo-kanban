@@ -264,8 +264,34 @@ describe("avatar URL resolution in routers", () => {
         publicId: "activity0001",
       },
       order: "newest",
+      commentsOnly: false,
     });
     expect(result.nextCursor).toBe(now.toISOString());
     expect(result.nextCursorPublicId).toBe("activity0002");
+  });
+
+  it("passes the comments-only filter to the repository", async () => {
+    mockGetCard.mockResolvedValue({
+      id: 17,
+      workspaceId: 7,
+      workspaceVisibility: "public",
+    } as never);
+    mockGetActivities.mockResolvedValue({
+      activities: [],
+      hasMore: false,
+      nextCursor: undefined,
+    } as never);
+
+    const { cardRouter } = await import("./card");
+    await cardRouter.createCaller(ctx).getActivities({
+      cardPublicId: "card-12345678",
+      commentsOnly: true,
+    });
+
+    expect(mockGetActivities).toHaveBeenCalledWith(
+      db,
+      17,
+      expect.objectContaining({ commentsOnly: true }),
+    );
   });
 });

@@ -102,7 +102,7 @@ test(
       exact: true,
     });
     const loadMore = page.getByRole("button", {
-      name: "Load more activities",
+      name: "Load more comments",
     });
     const commentForm = page
       .getByRole("button", { name: "Submit comment" })

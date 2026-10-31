@@ -9,6 +9,7 @@ import { IoChevronForwardSharp } from "react-icons/io5";
 import { authClient } from "@kan/auth/client";
 
 import Avatar from "~/components/Avatar";
+import Button from "~/components/Button";
 import Editor from "~/components/Editor";
 import FeedbackModal from "~/components/FeedbackModal";
 import { LabelForm } from "~/components/LabelForm";
@@ -22,6 +23,10 @@ import {
   useActivitySortOrder,
 } from "~/hooks/useActivitySortOrder";
 import { usePermissions } from "~/hooks/usePermissions";
+import {
+  setShowActivityDetails,
+  useShowActivityDetails,
+} from "~/hooks/useShowActivityDetails";
 import { useModal } from "~/providers/modal";
 import { usePopup } from "~/providers/popup";
 import { useWorkspace } from "~/providers/workspace";
@@ -181,6 +186,7 @@ export function CardRightPanel({ isTemplate }: { isTemplate?: boolean }) {
 export default function CardPage({ isTemplate }: { isTemplate?: boolean }) {
   const router = useRouter();
   const activitySortOrder = useActivitySortOrder();
+  const showActivityDetails = useShowActivityDetails();
   const utils = api.useUtils();
   const {
     modalContentType,
@@ -511,12 +517,28 @@ export default function CardPage({ isTemplate }: { isTemplate?: boolean }) {
                   <div className="border-t-[1px] border-light-300 pt-12 dark:border-dark-300">
                     <header className="flex items-center justify-between pb-4">
                       <h2 className="text-md font-medium text-light-1000 dark:text-dark-1000">
-                        {t`Activity`}
+                        {isTemplate ? t`Activity` : t`Comments and activity`}
                       </h2>
-                      <ActivitySortOrderToggle
-                        order={activitySortOrder}
-                        onChange={setActivitySortOrder}
-                      />
+                      <div className="flex items-center gap-2">
+                        {!isTemplate && (
+                          <Button
+                            variant="secondary"
+                            size="sm"
+                            aria-pressed={showActivityDetails}
+                            onClick={() =>
+                              setShowActivityDetails(!showActivityDetails)
+                            }
+                          >
+                            {showActivityDetails
+                              ? t`Hide details`
+                              : t`Show details`}
+                          </Button>
+                        )}
+                        <ActivitySortOrderToggle
+                          order={activitySortOrder}
+                          onChange={setActivitySortOrder}
+                        />
+                      </div>
                     </header>
                     {!isTemplate && activitySortOrder === "newest" && (
                       <div className="mb-2">
@@ -533,6 +555,7 @@ export default function CardPage({ isTemplate }: { isTemplate?: boolean }) {
                         isLoading={!card}
                         order={activitySortOrder}
                         recentCommentPublicIds={recentCommentPublicIds}
+                        commentsOnly={!isTemplate && !showActivityDetails}
                       />
                     </div>
                     {!isTemplate && activitySortOrder === "oldest" && (
