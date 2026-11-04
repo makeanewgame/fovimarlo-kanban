@@ -168,6 +168,21 @@ export const archivedCardsResponseSchema = z.object({
   hasMore: z.boolean(),
 });
 
+// ─── card.assignedToMe ───────────────────────────────────────
+export const assignedCardsResponseSchema = z.array(
+  z.object({
+    publicId: z.string(),
+    title: z.string(),
+    cardNumber: z.number().nullable(),
+    cardPrefix: z.string(),
+    dueDate: z.date().nullable(),
+    priority: z.enum(cardPriorities).nullable(),
+    listName: z.string(),
+    boardPublicId: z.string(),
+    boardName: z.string(),
+  }),
+);
+
 // ─── card.unarchive ──────────────────────────────────────────
 export const cardUnarchiveResponseSchema = z.object({
   publicId: z.string(),

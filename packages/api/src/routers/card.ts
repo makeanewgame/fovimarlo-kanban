@@ -19,6 +19,7 @@ import {
 import {
   activityItemSchema,
   archivedCardsResponseSchema,
+  assignedCardsResponseSchema,
   cardCreateResponseSchema,
   cardDetailSchema,
   cardUnarchiveResponseSchema,
@@ -1325,6 +1326,47 @@ export const cardRouter = createTRPCRouter({
       }
 
       return { success: true };
+    }),
+  assignedToMe: protectedProcedure
+    .meta({
+      openapi: {
+        summary: "Get cards assigned to the current user",
+        method: "GET",
+        path: "/workspaces/{workspacePublicId}/cards/assigned-to-me",
+        description:
+          "Retrieves the cards in a workspace that the current user is a member of",
+        tags: ["Cards"],
+        protect: true,
+      },
+    })
+    .input(z.object({ workspacePublicId: z.string().min(12) }))
+    .output(assignedCardsResponseSchema)
+    .query(async ({ ctx, input }) => {
+      const userId = ctx.user?.id;
+
+      if (!userId)
+        throw new TRPCError({
+          message: `User not authenticated`,
+          code: "UNAUTHORIZED",
+        });
+
+      const workspace = await workspaceRepo.getByPublicId(
+        ctx.db,
+        input.workspacePublicId,
+      );
+
+      if (!workspace || workspace.deletedAt)
+        throw new TRPCError({
+          message: `Workspace with public ID ${input.workspacePublicId} not found`,
+          code: "NOT_FOUND",
+        });
+
+      await assertPermission(ctx.db, userId, workspace.id, "card:view");
+
+      return cardRepo.getAssignedToUser(ctx.db, {
+        workspaceId: workspace.id,
+        userId,
+      });
     }),
   archived: protectedProcedure
     .meta({

@@ -15,6 +15,7 @@ export {
   activityItemSchema,
   archivedCardsResponseSchema,
   cardUnarchiveResponseSchema,
+  assignedCardsResponseSchema,
 } from "./card";
 
 export {

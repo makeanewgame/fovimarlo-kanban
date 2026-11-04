@@ -10,6 +10,7 @@ import {
   HiOutlineTrash,
   HiXMark,
 } from "react-icons/hi2";
+import { twMerge } from "tailwind-merge";
 
 import { usePopup } from "~/providers/popup";
 import { api } from "~/utils/api";
@@ -41,10 +42,18 @@ export function AttachmentThumbnails({
         attachment.contentType.startsWith("image/") && attachment.url,
     ) ?? [];
 
+  const videoAttachments =
+    attachments?.filter(
+      (attachment) =>
+        attachment.contentType.startsWith("video/") && attachment.url,
+    ) ?? [];
+
   const nonImageAttachments =
     attachments?.filter(
       (attachment) =>
-        !attachment.contentType.startsWith("image/") && attachment.url,
+        !attachment.contentType.startsWith("image/") &&
+        !attachment.contentType.startsWith("video/") &&
+        attachment.url,
     ) ?? [];
 
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
@@ -110,7 +119,11 @@ export function AttachmentThumbnails({
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [selectedIndex, imageAttachments.length]);
 
-  if (imageAttachments.length === 0 && nonImageAttachments.length === 0) {
+  if (
+    imageAttachments.length === 0 &&
+    videoAttachments.length === 0 &&
+    nonImageAttachments.length === 0
+  ) {
     return null;
   }
 
@@ -160,24 +173,59 @@ export function AttachmentThumbnails({
 
   return (
     <>
-      <div className="mb-3 flex flex-wrap gap-2 pt-1">
-        {imageAttachments.map((attachment, index) => {
-          if (!attachment.url) return null;
-          return (
-            <AttachmentThumbnail
-              key={attachment.publicId}
-              attachment={{
-                publicId: attachment.publicId,
-                url: attachment.url,
-                originalFilename: attachment.originalFilename ?? "",
-                contentType: attachment.contentType,
-              }}
-              onClick={() => openViewer(index)}
-              isImage={true}
-            />
-          );
-        })}
-      </div>
+      {imageAttachments.length > 0 && (
+        <div
+          className={twMerge(
+            "mb-3 grid gap-3 pt-1",
+            imageAttachments.length > 1 && "sm:grid-cols-2",
+          )}
+        >
+          {imageAttachments.map((attachment, index) => {
+            if (!attachment.url) return null;
+            return (
+              <AttachmentImagePreview
+                key={attachment.publicId}
+                url={attachment.url}
+                originalFilename={attachment.originalFilename ?? ""}
+                isSingle={imageAttachments.length === 1}
+                onClick={() => openViewer(index)}
+              />
+            );
+          })}
+        </div>
+      )}
+
+      {videoAttachments.length > 0 && (
+        <div className="mb-3 flex flex-col gap-3">
+          {videoAttachments.map((attachment) => {
+            if (!attachment.url) return null;
+            return (
+              <div key={attachment.publicId} className="flex flex-col gap-2">
+                <video
+                  src={attachment.url}
+                  controls
+                  playsInline
+                  preload="metadata"
+                  className="max-h-[600px] w-full rounded-xl border border-light-300 bg-black dark:border-dark-300"
+                />
+                <FileListItem
+                  attachment={attachment}
+                  onDownload={() => handleDownload(attachment)}
+                  onDelete={
+                    isReadOnly
+                      ? undefined
+                      : () => {
+                          deleteAttachment.mutate({
+                            attachmentPublicId: attachment.publicId,
+                          });
+                        }
+                  }
+                />
+              </div>
+            );
+          })}
+        </div>
+      )}
 
       {nonImageAttachments.length > 0 && (
         <div className="mb-3 flex flex-col gap-2">
@@ -365,39 +413,51 @@ export function AttachmentThumbnails({
   );
 }
 
-function AttachmentThumbnail({
-  attachment,
+function AttachmentImagePreview({
+  url,
+  originalFilename,
+  isSingle,
   onClick,
-  isImage,
 }: {
-  attachment: {
-    publicId: string;
-    url: string;
-    originalFilename: string;
-    contentType: string;
-  };
+  url: string;
+  originalFilename: string;
+  isSingle: boolean;
   onClick: () => void;
-  isImage: boolean;
 }) {
+  // A single image is shown at its natural aspect ratio; multiple images
+  // share a grid of equal tiles so the layout stays tidy.
+  if (isSingle) {
+    return (
+      <button
+        onClick={onClick}
+        className="block w-fit max-w-full overflow-hidden rounded-xl border border-light-300 dark:border-dark-300"
+        aria-label={`View ${originalFilename}`}
+      >
+        <Image
+          src={url}
+          alt={originalFilename}
+          width={1600}
+          height={1200}
+          className="h-auto max-h-[600px] w-auto max-w-full object-contain"
+          sizes="(max-width: 768px) 100vw, 800px"
+        />
+      </button>
+    );
+  }
+
   return (
     <button
       onClick={onClick}
-      className="relative h-16 w-16 overflow-hidden rounded-xl border border-light-300 transition-transform hover:scale-105 dark:border-dark-300"
-      aria-label={`View ${attachment.originalFilename}`}
+      className="relative aspect-[4/3] w-full overflow-hidden rounded-xl border border-light-300 bg-light-100 dark:border-dark-300 dark:bg-dark-100"
+      aria-label={`View ${originalFilename}`}
     >
-      {isImage ? (
-        <Image
-          src={attachment.url}
-          alt={attachment.originalFilename}
-          fill
-          className="object-cover"
-          sizes="64px"
-        />
-      ) : (
-        <div className="flex h-full w-full items-center justify-center bg-light-100 dark:bg-dark-100">
-          <HiDocumentText className="h-6 w-6 text-light-700 dark:text-dark-700" />
-        </div>
-      )}
+      <Image
+        src={url}
+        alt={originalFilename}
+        fill
+        className="object-contain"
+        sizes="(max-width: 640px) 100vw, 400px"
+      />
     </button>
   );
 }

@@ -6,7 +6,11 @@ import { useLingui } from "@lingui/react";
 import { env } from "next-runtime-env";
 import { useTheme } from "next-themes";
 import { useEffect, useMemo, useState } from "react";
-import { HiBolt, HiOutlineDocumentText } from "react-icons/hi2";
+import {
+  HiBolt,
+  HiOutlineClipboardDocumentCheck,
+  HiOutlineDocumentText,
+} from "react-icons/hi2";
 import {
   TbLayoutSidebarLeftCollapse,
   TbLayoutSidebarLeftExpand,
@@ -108,6 +112,20 @@ export default function SideNavigation({
           action: () => router.push("/boards"),
           group: "NAVIGATION",
           description: t`Go to boards`,
+        },
+      },
+      {
+        name: t`Assigned to me`,
+        href: "/assigned",
+        staticIcon: (
+          <HiOutlineClipboardDocumentCheck className="h-[18px] w-[18px]" />
+        ),
+        keyboardShortcut: {
+          type: "SEQUENCE",
+          strokes: [{ key: "G" }, { key: "A" }],
+          action: () => router.push("/assigned"),
+          group: "NAVIGATION",
+          description: t`Go to cards assigned to me`,
         },
       },
       {

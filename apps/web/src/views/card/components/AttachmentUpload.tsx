@@ -118,30 +118,31 @@ export function AttachmentUpload({ cardPublicId }: { cardPublicId: string }) {
             : "border-transparent",
         )}
       >
-        <div className="flex items-center justify-between p-2">
+        <div className="flex flex-wrap items-center gap-2 p-2">
           <Button
             type="button"
-            variant="ghost"
-            aria-label={t`Add checklist`}
+            variant="secondary"
             iconLeft={
               <HiCheckBadge className="h-4 w-4 text-light-950 dark:text-dark-950" />
             }
-            iconOnly
             size="sm"
             onClick={() => openModal("ADD_CHECKLIST")}
-          />
+          >
+            {t`New checklist`}
+          </Button>
           <Button
             type="button"
-            variant="ghost"
+            variant="secondary"
             iconLeft={
               <HiOutlinePaperClip className="h-4 w-4 text-light-950 dark:text-dark-950" />
             }
             isLoading={uploading}
             disabled={uploading}
-            iconOnly
             size="sm"
             onClick={() => inputRef.current?.click()}
-          />
+          >
+            {t`Add attachment`}
+          </Button>
         </div>
       </div>
     </div>

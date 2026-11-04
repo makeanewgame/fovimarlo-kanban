@@ -1299,3 +1299,43 @@ export const getWorkspaceAndCardIdByCardPublicId = async (
       }
     : null;
 };
+
+export const getAssignedToUser = (
+  db: dbClient,
+  args: { workspaceId: number; userId: string },
+) => {
+  return db
+    .select({
+      publicId: cards.publicId,
+      title: cards.title,
+      cardNumber: cards.cardNumber,
+      dueDate: cards.dueDate,
+      priority: cards.priority,
+      listName: lists.name,
+      boardPublicId: boards.publicId,
+      boardName: boards.name,
+      cardPrefix: workspaces.cardPrefix,
+    })
+    .from(cardToWorkspaceMembers)
+    .innerJoin(
+      workspaceMembers,
+      eq(cardToWorkspaceMembers.workspaceMemberId, workspaceMembers.id),
+    )
+    .innerJoin(cards, eq(cardToWorkspaceMembers.cardId, cards.id))
+    .innerJoin(lists, eq(cards.listId, lists.id))
+    .innerJoin(boards, eq(lists.boardId, boards.id))
+    .innerJoin(workspaces, eq(boards.workspaceId, workspaces.id))
+    .where(
+      and(
+        eq(workspaceMembers.userId, args.userId),
+        isNull(workspaceMembers.deletedAt),
+        eq(boards.workspaceId, args.workspaceId),
+        eq(boards.type, "regular"),
+        eq(boards.isArchived, false),
+        isNull(boards.deletedAt),
+        isNull(lists.deletedAt),
+        isNull(cards.deletedAt),
+      ),
+    )
+    .orderBy(asc(boards.name), asc(lists.index), asc(cards.index));
+};
